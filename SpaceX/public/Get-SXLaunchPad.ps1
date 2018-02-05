@@ -1,4 +1,20 @@
 function Get-SXLaunchpad {
+    <#
+    .SYNOPSIS
+    Retrieve SpaceX launch sites data
+    
+    .DESCRIPTION
+    Retrieve SpaceX launch sites data
+    
+    .EXAMPLE
+    Get-SXLaunchpad
+
+    .EXAMPLE
+    Get-SXLaunchpad -Launchpad stls
+    
+    .NOTES
+    https://github.com/lazywinadmin/spacex
+    #>
     [CmdletBinding()]
     PARAM($LaunchPad)
     try {

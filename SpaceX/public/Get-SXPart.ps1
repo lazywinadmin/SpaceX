@@ -1,5 +1,21 @@
 function Get-SXPart {
-    [CmdletBinding()]
+    <#
+    .SYNOPSIS
+    Retrieve SpaceX parts data
+    
+    .DESCRIPTION
+    Retrieve SpaceX parts data
+    
+    .EXAMPLE
+    Get-SXPart -Type Core
+
+    .EXAMPLE
+    Get-SXPart -Type Core -CoreSerial B1045
+    
+    .NOTES
+    https://github.com/lazywinadmin/spacex
+    #>
+    [CmdletBinding(DefaultParameterSetName='All')]
     PARAM(
         [Parameter(Mandatory=$true)]
         [ValidateSet("Capsule","Core")]

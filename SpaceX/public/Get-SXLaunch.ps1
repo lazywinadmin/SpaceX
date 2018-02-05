@@ -1,4 +1,23 @@
 function Get-SXLaunch {
+    <#
+    .SYNOPSIS
+    Retrieve SpaceX launch data
+    
+    .DESCRIPTION
+    Retrieve SpaceX launch data
+    
+    .EXAMPLE
+    Get-SXLaunch
+
+    .EXAMPLE
+    Get-SXLaunch -Latest
+
+    .EXAMPLE
+    Get-SXLaunch -Upcoming
+    
+    .NOTES
+    https://github.com/lazywinadmin/spacex
+    #>
     [CmdletBinding()]
     PARAM(
         [switch]$Latest,

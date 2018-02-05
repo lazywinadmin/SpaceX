@@ -1,4 +1,20 @@
 function Get-SXCapsule {
+    <#
+    .SYNOPSIS
+    Retrieve SpaceX capsule data
+    
+    .DESCRIPTION
+    Retrieve SpaceX capsule data
+    
+    .EXAMPLE
+    Get-SXCapsule
+
+    .EXAMPLE
+    Get-SXCapsule -Capsule crewdragon
+    
+    .NOTES
+    https://github.com/lazywinadmin/spacex
+    #>
     [CmdletBinding()]
     PARAM($Capsule)
     try {
