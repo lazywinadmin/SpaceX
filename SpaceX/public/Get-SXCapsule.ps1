@@ -29,7 +29,7 @@ function Get-SXCapsule {
             }
         }
 
-        Invoke-RestMethod @Splat
+        (Invoke-RestMethod @Splat)
     }
     catch {
         $PSCmdlet.ThrowTerminatingError($_)
