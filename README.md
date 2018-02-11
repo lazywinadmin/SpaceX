@@ -1,6 +1,27 @@
 # SpaceX
 
-PowerShell module to interact with [api.spacexdata.com](https://github.com/r-spacex/SpaceX-API/wiki) (unofficial api)
+PowerShell module to interact with [api.spacexdata.com](https://github.com/r-spacex/SpaceX-API/wiki) (unofficial)
+
+![image-center](\media\last-starman.jpg 'Starman')
+
+## Table of Contents
+
+- [Contributing](#contributing)
+- [Usage](#usage)
+  - [Installation](#Installation)
+  - [Commands](#Commands-available)
+  - [Installation](#Installation)
+  - [Launches data](#Launches-Data)
+    - [Upcoming](#Upcoming)
+    - [Latest](#Latest)
+  - [Launch sites data](#Launch-sites-data)
+  - [Capsules data](#Capsules-data)
+  - [Parts data](#Parts-data)
+  - [Company data](#Company-data)
+  - [Rocket data](#Rocket-data)
+- [Related posts](#Related-posts)
+- [Resources](#Resources)
+
 
 ## Contributing
 
@@ -8,7 +29,15 @@ Contributions are more than welcome! (via pull requests or issues).
 
 ## Usage
 
-### Get all the commands
+### Installation
+
+Install the module from the PowerShellGallery.
+
+```powershell
+Install-Module -Name SpaceX
+```
+
+### Commands available
 
 The following commands are available
 
@@ -27,7 +56,9 @@ Function    Get-SXPart      1.0.0.0 spacex
 Function    Get-SXRocket    1.0.0.0 spacex
 ```
 
-### Get upcoming launch(es)
+### Launches data
+
+#### Upcoming
 
 ```powershell
 Get-SXLaunch -upcoming
@@ -92,7 +123,7 @@ links             : @{mission_patch=; reddit_campaign=https://www.reddit.com/r/s
 details           : 
 ```
 
-### Get Latest launch(es)
+### Latest
 
 ```powershell
 Get-SXLaunch -Latest
@@ -128,7 +159,7 @@ details           : Reused booster from the classified NROL-76 mission in May 20
                     in a tweet that SpaceX will attempt to tow the booster to shore.
 ```
 
-### Get launch sites
+### Launch sites data
 
 ```powershell
 Get-SXLaunchpad
@@ -180,7 +211,7 @@ details           : SpaceX east coast landing pad, where the historic first land
 
 ```
 
-### Get the Capsules
+### Capsules data
 
 ```powershell
 Get-SXCapsule
@@ -251,7 +282,7 @@ diameter            : @{meters=3.7; feet=12}
 
 ```
 
-### Get the Parts
+### Parts data
 
 ```powershell
 Get-SXPart -Type Core
@@ -331,9 +362,9 @@ summary        : SpaceX designs, manufactures and launches advanced rockets and
                  planets.
 ```
 
-### Get Rocket data
+### Rocket data
 
-#### Get all rockets information
+#### All rockets
 
 ```powershell
 Get-SXRocket
@@ -410,7 +441,7 @@ description      : With the ability to lift into orbit over 54 metric tons (119,
                    twice the payload of the next closest operational vehicle, the Delta IV Heavy, at one-third the cost.
 ```
 
-#### Retrieve a specific rocket
+#### Specific rocket
 
 ```powershell
 Get-SXRocket -Rocket falconheavy
@@ -433,14 +464,22 @@ company          : SpaceX
 height           : @{meters=70; feet=229.6}
 diameter         : @{meters=12.2; feet=39.9}
 mass             : @{kg=1420788; lb=3125735}
-payload_weights  : {@{id=leo; name=Low Earth Orbit; kg=63800; lb=140660}, @{id=gto; name=Geosynchronous Transfer Orbit; kg=26700; lb=58860}, @{id=mars; name=Mars Orbit; kg=16800; lb=37040}, @{id=pluto; 
+payload_weights  : {@{id=leo; name=Low Earth Orbit; kg=63800; lb=140660}, @{id=gto; name=Geosynchronous Transfer Orbit; kg=26700; lb=58860}, @{id=mars; name=Mars Orbit; kg=16800; lb=37040}, @{id=pluto;
                    name=Pluto Orbit; kg=3500; lb=7720}}
 first_stage      : @{reusable=True; engines=27; fuel_amount_tons=1155; cores=3; burn_time_sec=162; thrust_sea_level=; thrust_vacuum=}
 second_stage     : @{engines=1; burn_time_sec=397; thrust=; payloads=}
-engines          : @{number=27; type=merlin; version=1D+; layout=octaweb; engine_loss_max=6; propellant_1=subcooled liquid oxygen; propellant_2= RP-1 kerosene; thrust_sea_level=; thrust_vacuum=; 
+engines          : @{number=27; type=merlin; version=1D+; layout=octaweb; engine_loss_max=6; propellant_1=subcooled liquid oxygen; propellant_2= RP-1 kerosene; thrust_sea_level=; thrust_vacuum=;
                    thrust_to_weight=180.1}
 landing_legs     : @{number=12; material=carbon fiber}
-description      : With the ability to lift into orbit over 54 metric tons (119,000 lb)--a mass equivalent to a 737 jetliner loaded with passengers, crew, luggage and fuel--Falcon Heavy can lift more than 
+description      : With the ability to lift into orbit over 54 metric tons (119,000 lb)--a mass equivalent to a 737 jetliner loaded with passengers, crew, luggage and fuel--Falcon Heavy can lift more than
                    twice the payload of the next closest operational vehicle, the Delta IV Heavy, at one-third the cost.
 
 ```
+
+## Related posts
+
+* [SpaceX PowerShell module](https://lazywinadmin.github.io/2018/02/SpaceX_module.html) by [@LazyWinAdm](https://twitter.com/LazyWinAdm)
+
+## Resources
+
+* [Api.spacexdata.com documentation](https://github.com/r-spacex/SpaceX-API/wiki)
