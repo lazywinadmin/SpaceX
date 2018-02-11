@@ -2,7 +2,7 @@
 
 PowerShell module to interact with [api.spacexdata.com](https://github.com/r-spacex/SpaceX-API/wiki) (unofficial)
 
-![image-center](\media\last-starman.jpg 'Starman')
+![alt text](/media/last-starman.jpg 'Starman')
 
 ## Table of Contents
 
