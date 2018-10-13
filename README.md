@@ -222,76 +222,63 @@ details           : SpaceX east coast landing pad, where the historic first land
 ```
 
 ### Capsules data
-
+#### All Capsules
 ```powershell
 Get-SXCapsule
 ```
 
 ```text
-id                  : dragon1
-name                : Dragon 1
-type                : capsule
-active              : True
-crew_capacity       : 0
-sidewall_angle_deg  : 15
-orbit_duration_yr   : 2
-heat_shield         : @{material=PICA-X; size_meters=3.6; temp_degrees=3000; 
-                      dev_partner=NASA}
-thrusters           : {@{type=Draco; amount=18; pods=4; fuel_1=nitrogen tetroxide; 
-                      fuel_2=monomethylhydrazine; thrust=}}
-launch_payload_mass : @{kg=6000; lb=13228}
-launch_payload_vol  : @{cubic_meters=25; cubic_feet=883}
-return_payload_mass : @{kg=3000; lb=6614}
-return_payload_vol  : @{cubic_meters=11; cubic_feet=388}
-pressurized_capsule : @{payload_volume=}
-trunk               : @{trunk_volume=; cargo=}
-height_w_trunk      : @{meters=7.2; feet=23.6}
-diameter            : @{meters=3.7; feet=12}
+capsule_serial       : C105
+capsule_id           : dragon1
+status               : unknown
+original_launch      : 2014-04-18T19:25:00.000Z
+original_launch_unix : 1397849100
+missions             : {@{name=CRS-3; flight=14}}
+landings             : 1
+type                 : Dragon 1.1
+details              : First Dragon v1.1 capsule
+reuse_count          : 0
 
-id                  : dragon2
-name                : Dragon 2
-type                : capsule
-active              : False
-crew_capacity       : 0
-sidewall_angle_deg  : 15
-orbit_duration_yr   : 2
-heat_shield         : @{material=PICA-X; size_meters=3.6; temp_degrees=3000; 
-                      dev_partner=NASA}
-thrusters           : {@{type=Draco; amount=18; pods=4; fuel_1=nitrogen tetroxide; 
-                      fuel_2=monomethylhydrazine; thrust=}}
-launch_payload_mass : @{kg=6000; lb=13228}
-launch_payload_vol  : @{cubic_meters=25; cubic_feet=883}
-return_payload_mass : @{kg=3000; lb=6614}
-return_payload_vol  : @{cubic_meters=11; cubic_feet=388}
-pressurized_capsule : @{payload_volume=}
-trunk               : @{trunk_volume=; cargo=}
-height_w_trunk      : @{meters=7.2; feet=23.6}
-diameter            : @{meters=3.7; feet=12}
+capsule_serial       : C106
+capsule_id           : dragon1
+status               : active
+original_launch      : 2014-09-21T05:52:00.000Z
+original_launch_unix : 1411278720
+missions             : {@{name=CRS-4; flight=18}, @{name=CRS-11; flight=41}}
+landings             : 2
+type                 : Dragon 1.1
+details              : First Dragon capsule to be reused
+reuse_count          : 1
 
-id                  : crewdragon
-name                : Crew Dragon
-type                : capsule
-active              : False
-crew_capacity       : 7
-sidewall_angle_deg  : 15
-orbit_duration_yr   : 2
-heat_shield         : @{material=PICA-X; size_meters=3.6; temp_degrees=3000; 
-                      dev_partner=NASA}
-thrusters           : {@{type=Draco; amount=18; pods=4; fuel_1=nitrogen tetroxide; 
-                      fuel_2=monomethylhydrazine; thrust=}, @{type=SuperDraco; amount=8; 
-                      pods=4; fuel_1=dinitrogen tetroxide; fuel_2=monomethylhydrazine; 
-                      thrust=}}
-launch_payload_mass : @{kg=6000; lb=13228}
-launch_payload_vol  : @{cubic_meters=25; cubic_feet=883}
-return_payload_mass : @{kg=3000; lb=6614}
-return_payload_vol  : @{cubic_meters=11; cubic_feet=388}
-pressurized_capsule : @{payload_volume=}
-trunk               : @{trunk_volume=; cargo=}
-height_w_trunk      : @{meters=7.2; feet=23.6}
-diameter            : @{meters=3.7; feet=12}
-
+capsule_serial       : C107
+capsule_id           : dragon1
+status               : unknown
+original_launch      : 2015-01-10T09:47:00.000Z
+original_launch_unix : 1420883220
+missions             : {@{name=CRS-5; flight=19}}
+landings             : 1
+type                 : Dragon 1.1
+details              :
+reuse_count          : 0
 ```
 
+#### Specific Capsule
+```powershell
+Get-SXCapsule -Capsule C109
+```
+
+```text
+capsule_serial       : C109
+capsule_id           : dragon1
+status               : destroyed
+original_launch      : 2015-06-28T14:21:00.000Z
+original_launch_unix : 1435501260
+missions             : {@{name=CRS-7; flight=24}}
+landings             : 0
+type                 : Dragon 1.1
+details              : Destroyed on impact after F9 launch failure
+reuse_count          : 0
+```
 ### Parts data
 
 ```powershell

@@ -10,7 +10,7 @@ function Get-SXCapsule {
     Get-SXCapsule
 
     .EXAMPLE
-    Get-SXCapsule -Capsule crewdragon
+    Get-SXCapsule -Capsule C109
     
     .NOTES
     https://github.com/lazywinadmin/spacex
@@ -20,12 +20,12 @@ function Get-SXCapsule {
     try {
         if ($Capsule) {
             $Splat = @{
-                Uri = "https://api.spacexdata.com/v2/capsules/$Capsule"
+                Uri = "https://api.spacexdata.com/v3/capsules/$Capsule"
             }
         }
         else {
             $Splat = @{
-                Uri = "https://api.spacexdata.com/v2/capsules"
+                Uri = "https://api.spacexdata.com/v3/capsules"
             }
         }
 
