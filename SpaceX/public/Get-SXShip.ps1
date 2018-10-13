@@ -6,25 +6,25 @@ function Get-SXShip {
   .DESCRIPTION
   Retrieve SpaceX ship data (ASDS drone ships, tugs, fairing recovery ships, and various support ships)
 
-  .PARAMETER Ship
-  Specify the ship name
+  .PARAMETER ShipID
+  Specify the ship ID
   
   .EXAMPLE
   Get-SXShip
 
   .EXAMPLE
-  Get-SXShip -Ship "RACHEL"
+  Get-SXShip -ShipID "RACHEL"
   
   .NOTES
   https://github.com/lazywinadmin/spacex
   #>
   [CmdletBinding()]
-  PARAM($Ship)
+  PARAM($ShipID)
   try{
-      if($Ship)
+      if($ShipID)
       {
           $Splat = @{
-              Uri = "https://api.spacexdata.com/v3/ships/$Ship"
+              Uri = "https://api.spacexdata.com/v3/ships/$ShipID"
           }
       }
       else{
