@@ -16,7 +16,6 @@ PowerShell module to interact with [api.spacexdata.com](https://github.com/r-spa
     - [Latest](#latest)
   - [Launch sites data](#launch-sites-data)
   - [Capsules data](#capsules-data)
-  - [Parts data](#parts-data)
   - [Company data](#company-data)
   - [API data](#api-data)
   - [Rocket data](#rocket-data)
@@ -62,7 +61,6 @@ Function    Get-SXCompany   1.0.0.2 SpaceX
 Function    Get-SXLaunch    1.0.0.2 SpaceX
 Function    Get-SXLaunchpad 1.0.0.2 SpaceX
 Function    Get-SXMission   1.0.0.2 SpaceX
-Function    Get-SXPart      1.0.0.2 SpaceX
 Function    Get-SXRocket    1.0.0.2 SpaceX
 ```
 
@@ -303,59 +301,6 @@ landings             : 0
 type                 : Dragon 1.1
 details              : Destroyed on impact after F9 launch failure
 reuse_count          : 0
-```
-### Parts data
-
-```powershell
-Get-SXPart -Type Core
-```
-
-```text
-core_serial     : B0003
-status          : expended
-original_launch : 2010-06-04
-missions        : {Dragon Qualification Unit}
-rtls_attempt    : False
-rtls_landings   : 0
-asds_attempt    : False
-asds_landings   : 0
-water_landing   : False
-details         : Core expended on flight, no recovery effort. First flight of Falcon 9
-
-core_serial     : B0004
-status          : expended
-original_launch : 2010-12-08
-missions        : {COTS Demo Flight 1}
-rtls_attempt    : False
-rtls_landings   : 0
-asds_attempt    : False
-asds_landings   : 0
-water_landing   : False
-details         : First flight of Dragon
-
-core_serial     : B0005
-status          : expended
-original_launch : 2012-05-22
-missions        : {COTS Demo Flight 2}
-rtls_attempt    : False
-rtls_landings   : 0
-asds_attempt    : False
-asds_landings   : 0
-water_landing   : False
-details         :
-
-core_serial     : B0006
-status          : expended
-original_launch : 2012-10-08
-missions        : {SpaceX CRS-1, Orbcomm-OG2}
-rtls_attempt    : False
-rtls_landings   : 0
-asds_attempt    : False
-asds_landings   : 0
-water_landing   : False
-details         : Suffered engine out at T+1:19 but primary mission successful
-
-...
 ```
 
 ### Company data
