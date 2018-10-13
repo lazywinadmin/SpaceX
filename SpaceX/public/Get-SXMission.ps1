@@ -13,7 +13,7 @@ function Get-SXMission {
     Get-SXMission
 
     .EXAMPLE
-    Get-SXMission -MissionId F3364BF
+    Get-SXMission -Mission F3364BF
     
     .NOTES
     https://github.com/lazywinadmin/spacex
@@ -24,12 +24,12 @@ function Get-SXMission {
         if($Mission)
         {
             $Splat = @{
-                Uri = "https://api.spacexdata.com/v2/missions/$Mission"
+                Uri = "https://api.spacexdata.com/v3/missions/$Mission"
             }
         }
         else{
             $Splat = @{
-                Uri = "https://api.spacexdata.com/v2/missions"
+                Uri = "https://api.spacexdata.com/v3/missions"
             }
         }
 
