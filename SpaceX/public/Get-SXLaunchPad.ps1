@@ -20,12 +20,12 @@ function Get-SXLaunchpad {
     try {
         if ($LaunchPad) {
             $Splat = @{
-                Uri = "https://api.spacexdata.com/v2/launchpads/$LaunchPad"
+                Uri = "https://api.spacexdata.com/v3/launchpads/$LaunchPad"
             }
         }
         else {
             $Splat = @{
-                Uri = "https://api.spacexdata.com/v2/launchpads"
+                Uri = "https://api.spacexdata.com/v3/launchpads"
             }
         }
 

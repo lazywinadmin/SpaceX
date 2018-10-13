@@ -191,55 +191,59 @@ static_fire_date_unix   : 1538514000
 ```
 
 ### Launch sites data
-
+#### All Launch Sites
 ```powershell
 Get-SXLaunchpad
 ```
 
 ```text
-id                : ccafs_slc_40
-full_name         : Cape Canaveral Air Force Station Space Launch Complex 40
+id                : 1
+status            : retired
+location          : @{name=Omelek Island; region=Marshall Islands; latitude=9.0477206; longitude=167.7431292}
+vehicles_launched : {Falcon 1}
+details           : SpaceX original launch site, where all of the Falcon 1 launches occured. Abandoned as SpaceX
+                    decided against upgrading the pad to support Falcon 9.
+site_id           : kwajalein_atoll
+site_name_long    : Kwajalein Atoll Omelek Island
+
+id                : 2
 status            : active
-location          : @{name=Cape Canaveral; region=Florida; latitude=28.5618571;
-                    longitude=-80.577366}
+location          : @{name=Cape Canaveral; region=Florida; latitude=28.5618571; longitude=-80.577366}
 vehicles_launched : {Falcon 9}
-details           : SpaceX primary Falcon 9 launch pad, where all east coast Falcon 9s
-                    launched prior to the AMOS-6 anomaly. Initially used to launch Titan
-                    rockets for Lockheed Martin. Back online since CRS-13 on 2017-12-15.
+details           : SpaceX primary Falcon 9 launch pad, where all east coast Falcon 9s launched prior to the AMOS-6
+                    anomaly. Initially used to launch Titan rockets for Lockheed Martin. Back online since CRS-13 on
+                    2017-12-15.
+site_id           : ccafs_slc_40
+site_name_long    : Cape Canaveral Air Force Station Space Launch Complex 40
 
-id                : stls
-full_name         : SpaceX South Texas Launch Site
-status            : under construction
-location          : @{name=Boca Chica Village; region=Texas; latitude=25.9972641;
-                    longitude=-97.1560845}
-vehicles_launched : {Falcon 9}
-details           : SpaceX new launch site currently under construction to help keep up
-                    with the Falcon 9 and Heavy manifests. Expected to be completed in
-                    late 2018. Initially will be limited to 12 flights per year, and
-                    only GTO launches.
-
-id                : vafb_slc_4w
-full_name         : Vandenberg Air Force Base Space Launch Complex 4W
+id                : 3
 status            : active
-location          : @{name=Vandenberg Air Force Base; region=California;
-                    latitude=34.6332043; longitude=-120.6156234}
+location          : @{name=Cape Canaveral; region=Florida; latitude=28.4857244; longitude=-80.5449222}
 vehicles_launched : {Falcon 9}
-details           : SpaceX west coast landing pad, has not yet been used. Expected to
-                    first be used during the Formosat-5 launch.
-
-id                : ccafs_lc_13
-full_name         : Cape Canaveral Air Force Station Space Launch Complex 13
-status            : active
-location          : @{name=Cape Canaveral; region=Florida; latitude=28.4857244;
-                    longitude=-80.5449222}
-vehicles_launched : {Falcon 9}
-details           : SpaceX east coast landing pad, where the historic first landing
-                    occurred. Originally used for early Atlas missiles and rockets from
-                    Lockheed Martin. Currently being expanded to add two smaller pads
-                    for Falcon Heavy RTLS missions.
-
+details           : SpaceX east coast landing pad, where the historic first landing occurred. Originally used for
+                    early Atlas missiles and rockets from Lockheed Martin. Currently being expanded to add two smaller
+                    pads for Falcon Heavy RTLS missions.
+site_id           : ccafs_lc_13
+site_name_long    : Cape Canaveral Air Force Station Space Launch Complex 13
 ...
 
+```
+
+#### Specific Launch Site
+```powershell
+Get-SXLaunchpad -Launchpad stls
+```
+
+```text
+id                : 8
+status            : under construction
+location          : @{name=Boca Chica Village; region=Texas; latitude=25.9972641; longitude=-97.1560845}
+vehicles_launched : {Falcon 9}
+details           : SpaceX new launch site currently under construction to help keep up with the Falcon 9 and Heavy
+                    manifests. Expected to be completed in late 2018. Initially will be limited to 12 flights per
+                    year, and only GTO launches.
+site_id           : stls
+site_name_long    : SpaceX South Texas Launch Site
 ```
 
 ### Capsules data
