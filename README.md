@@ -18,7 +18,7 @@ PowerShell module to interact with [api.spacexdata.com](https://github.com/r-spa
   - [Capsules data](#capsules-data)
   - [Parts data](#parts-data)
   - [Company data](#company-data)
-  - [Api data](#api-data)
+  - [API data](#api-data)
   - [Rocket data](#rocket-data)
   - [Mission data](#mission-data)
   - [Ship data](#ship-data)
