@@ -21,6 +21,12 @@ PowerShell module to interact with [api.spacexdata.com](https://github.com/r-spa
   - [Api data](#api-data)
   - [Rocket data](#rocket-data)
   - [Mission data](#mission-data)
+  - [Ship data](#ship-data)
+  - [Roadster data](#roadster-data)
+  - [Payload data](#payload-data)
+  - [Dragon Capsule data](#dragon-capsule-data)
+  - [Core data](#core-data)
+  - [Historical events](#historical-events)
 - [Related posts](#related-posts)
 - [Resources](#resources)
 
@@ -577,6 +583,439 @@ description   : In 2017, Iridium began launching Iridium NEXT, a second-generati
                 payload on 58 satellites is a marine AIS ship-tracker receiver, for Canadian company exactEarth Ltd.
                 Iridium can also be used to provide a data link to other satellites in space, enabling command and
                 control of other space assets regardless of the position of ground stations and gateways.
+```
+
+### Ship data
+
+#### All ships
+
+```powershell
+Get-SXShip
+```
+
+```text
+ship_id             : AMERICANCHAMPION
+ship_name           : American Champion
+ship_model          : 
+ship_type           : Tug
+roles               : {Support Ship, Barge Tug}
+active              : False
+imo                 : 7434016
+mmsi                : 367020820
+abs                 : 571252
+class               : 7604342
+weight_lbs          : 588000
+weight_kg           : 266712
+year_built          : 1976
+home_port           : Port of Los Angeles
+status              : Stopped
+speed_kn            : 0
+course_deg          : 
+position            : @{latitude=30.52757; longitude=-88.10252}
+successful_landings : 
+attempted_landings  : 
+missions            : {@{name=COTS 1; flight=7}, @{name=COTS 2; flight=8}}
+url                 : https://www.marinetraffic.com/en/ais/details/ships/shipid:434663/vessel:AMERICAN%20CHAMPION
+image               : https://i.imgur.com/woCxpkj.jpg
+
+ship_id             : AMERICANISLANDER
+ship_name           : American Islander
+ship_model          : 
+ship_type           : Cargo
+roles               : {Dragon Recovery}
+active              : False
+imo                 : 
+mmsi                : 367035570
+abs                 : 
+class               : 
+weight_lbs          : 
+weight_kg           : 
+year_built          : 
+home_port           : Port of Los Angeles
+status              : Stopped
+speed_kn            : 0
+course_deg          : 
+position            : @{latitude=33.73421; longitude=-118.2635}
+successful_landings : 
+attempted_landings  : 
+missions            : {@{name=CRS-1; flight=9}, @{name=CRS-2; flight=10}, @{name=CRS-3; flight=14}, @{name=CRS-4; flight=18}}
+url                 : https://www.marinetraffic.com/en/ais/details/ships/shipid:435112/vessel:AMERICAN%20ISLANDER
+image               : https://i.imgur.com/jmj8Sh2.jpg
+
+ship_id             : AMERICANSPIRIT
+ship_name           : American Spirit
+ship_model          : 
+ship_type           : Cargo
+roles               : {Support Ship}
+active              : False
+imo                 : 
+mmsi                : 
+abs                 : 
+class               : 
+weight_lbs          : 
+weight_kg           : 
+year_built          : 
+home_port           : Port of Los Angeles
+status              : 
+speed_kn            : 
+course_deg          : 
+position            : @{latitude=; longitude=}
+successful_landings : 
+attempted_landings  : 
+missions            : {@{name=CASSIOPE; flight=11}}
+url                 : 
+image               : 
+```
+
+#### Specific ship
+
+```powershell
+Get-SXShip -ShipID RACHEL
+```
+
+```text
+ship_id             : RACHEL
+ship_name           : RACHEL
+ship_model          : 
+ship_type           : Tug
+roles               : {ASDS Tug}
+active              : False
+imo                 : 7600378
+mmsi                : 367488370
+abs                 : 576417
+class               : 7611785
+weight_lbs          : 688000
+weight_kg           : 312072
+year_built          : 1976
+home_port           : Port Canaveral
+status              : Underway Using Engine
+speed_kn            : 5.7
+course_deg          : 256
+position            : @{latitude=29.55419; longitude=-90.91056}
+successful_landings : 
+attempted_landings  : 
+missions            : {@{name=Bangabandhu-1; flight=61}}
+url                 : https://www.marinetraffic.com/en/ais/details/ships/shipid:447352/vessel:RACHEL
+image               : https://i.imgur.com/IpYJWUW.jpg
+```
+
+### Roadster data
+
+```powershell
+Get-SXRoadster
+```
+
+```text
+name               : Elon Musk's Tesla Roadster
+launch_date_utc    : 2/6/18 8:45:00 PM
+launch_date_unix   : 1517949900
+launch_mass_kg     : 1350
+launch_mass_lbs    : 2976
+norad_id           : 43205
+epoch_jd           : 2458405.30868056
+orbit_type         : heliocentric
+apoapsis_au        : 1.6637452059669
+periapsis_au       : 0.986022718110123
+semi_major_axis_au : 162.732406797965
+eccentricity       : 0.255766734021751
+inclination        : 1.0775293866441
+longitude          : 317.094877300248
+periapsis_arg      : 177.48756497167
+period_days        : 557.012820498545
+speed_kph          : 72280.548
+speed_mph          : 44913.036391308
+earth_distance_km  : 256669718.449737
+earth_distance_mi  : 159487119.622832
+mars_distance_km   : 193942231.905947
+mars_distance_mi   : 120510078.58163
+flickr_images      : {https://farm5.staticflickr.com/4615/40143096241_11128929df_b.jpg, https://farm5.staticflickr.com/4702/40110298232_91b32d0cc0_b.jpg, https://farm5.staticflickr.com/4676/40110297852_5e794b3258_b.jpg, https://farm5.staticflickr.com/4745/40110304192_6e3e9a7a1b_b.jpg}
+wikipedia          : https://en.wikipedia.org/wiki/Elon_Musk%27s_Tesla_Roadster
+details            : Elon Musk's Tesla Roadster is an electric sports car that served as the dummy payload for the February 2018 Falcon Heavy test flight and is now an artificial satellite of the Sun. Starman, a mannequin dressed in a spacesuit, occupies the driver's seat. The car and rocket are products of Tesla and SpaceX, both companies founded by Elon Musk. This 2008-model Roadster was previously used by Musk for commuting, and is the only consumer car sent into space.
+```
+
+### Payload data
+
+#### All payloads
+
+```powershell
+Get-SXPayload
+```
+
+```text
+payload_id       : FalconSAT-2
+norad_id         : {}
+reused           : False
+customers        : {DARPA}
+nationality      : United States
+manufacturer     : SSTL
+payload_type     : Satellite
+payload_mass_kg  : 20
+payload_mass_lbs : 43
+orbit            : LEO
+orbit_params     : @{reference_system=geocentric; regime=low-earth; longitude=; semi_major_axis_km=; eccentricity=; periapsis_km=400; apoapsis_km=500; inclination_deg=39; period_min=; lifespan_years=; epoch=; mean_motion=; raan=; arg_of_pericenter=; mean_anomaly=}
+
+payload_id       : DemoSAT
+norad_id         : {}
+reused           : False
+customers        : {DARPA}
+nationality      : United States
+manufacturer     : SpaceX
+payload_type     : Satellite
+payload_mass_kg  : 
+payload_mass_lbs : 
+orbit            : LEO
+orbit_params     : @{reference_system=geocentric; regime=low-earth; longitude=; semi_major_axis_km=; eccentricity=; periapsis_km=; apoapsis_km=; inclination_deg=; period_min=; lifespan_years=; epoch=; mean_motion=; raan=; arg_of_pericenter=; mean_anomaly=}
+
+payload_id       : Trailblazer
+norad_id         : {}
+reused           : False
+customers        : {NASA}
+nationality      : United States
+manufacturer     : Space Dev
+payload_type     : Satellite
+payload_mass_kg  : 
+payload_mass_lbs : 
+orbit            : LEO
+orbit_params     : @{reference_system=geocentric; regime=low-earth; longitude=; semi_major_axis_km=; eccentricity=; periapsis_km=; apoapsis_km=; inclination_deg=; period_min=; lifespan_years=; epoch=; mean_motion=; raan=; arg_of_pericenter=; mean_anomaly=}
+```
+
+#### Specific payload
+
+```powershell
+Get-SXPayload -PayloadID "CRS-19"
+```
+
+```text
+payload_id        : CRS-19
+norad_id          : {}
+cap_serial        : 
+reused            : True
+customers         : {NASA (CRS)}
+nationality       : United States
+manufacturer      : SpaceX
+payload_type      : Dragon 1.1
+payload_mass_kg   : 
+payload_mass_lbs  : 
+orbit             : ISS
+orbit_params      : @{reference_system=geocentric; regime=low-earth; longitude=; semi_major_axis_km=; eccentricity=; periapsis_km=; apoapsis_km=; inclination_deg=; period_min=; lifespan_years=; epoch=; mean_motion=; raan=; arg_of_pericenter=; mean_anomaly=}
+mass_returned_kg  : 
+mass_returned_lbs : 
+flight_time_sec   : 
+cargo_manifest    : 
+```
+
+### Dragon capsule data
+
+#### All dragon capsule data
+
+```powershell
+Get-SXDragon
+```
+
+```text
+id                  : dragon1
+name                : Dragon 1
+type                : capsule
+active              : True
+crew_capacity       : 0
+sidewall_angle_deg  : 15
+orbit_duration_yr   : 2
+dry_mass_kg         : 4200
+dry_mass_lb         : 9300
+first_flight        : 2010-12-08
+heat_shield         : @{material=PICA-X; size_meters=3.6; temp_degrees=3000; dev_partner=NASA}
+thrusters           : {@{type=Draco; amount=18; pods=4; fuel_1=nitrogen tetroxide; fuel_2=monomethylhydrazine; thrust=}}
+launch_payload_mass : @{kg=6000; lb=13228}
+launch_payload_vol  : @{cubic_meters=25; cubic_feet=883}
+return_payload_mass : @{kg=3000; lb=6614}
+return_payload_vol  : @{cubic_meters=11; cubic_feet=388}
+pressurized_capsule : @{payload_volume=}
+trunk               : @{trunk_volume=; cargo=}
+height_w_trunk      : @{meters=7.2; feet=23.6}
+diameter            : @{meters=3.7; feet=12}
+flickr_images       : {https://www.spacex.com/sites/spacex/files/styles/media_gallery_large/public/2015_-_04_crs5_dragon_orbit13.jpg?itok=9p8_l7UP, https://www.spacex.com/sites/spacex/files/styles/media_gallery_large/public/2012_-_4_dragon_grapple_cots2-1.jpg?itok=R2-SeuMX, https://farm3.staticflickr.com/2815/32761844973_4b55b27d3c_b.jpg, https://farm9.staticflickr.com/8618/16649075267_d18cbb4342_b.jpg}
+wikipedia           : https://en.wikipedia.org/wiki/SpaceX_Dragon
+description         : Dragon is a reusable spacecraft developed by SpaceX, an American private space transportation company based in Hawthorne, California. Dragon is launched into space by the SpaceX Falcon 9 two-stage-to-orbit launch vehicle. The Dragon spacecraft was originally designed for human travel, but so far has only been used to deliver cargo to the International Space Station (ISS).
+
+id                  : dragon2
+name                : Dragon 2
+type                : capsule
+active              : False
+crew_capacity       : 7
+sidewall_angle_deg  : 15
+orbit_duration_yr   : 2
+dry_mass_kg         : 6350
+dry_mass_lb         : 14000
+first_flight        : 2018-11-01
+heat_shield         : @{material=PICA-X; size_meters=3.6; temp_degrees=3000; dev_partner=NASA}
+thrusters           : {@{type=Draco; amount=18; pods=4; fuel_1=nitrogen tetroxide; fuel_2=monomethylhydrazine; thrust=}, @{type=SuperDraco; amount=8; pods=4; fuel_1=dinitrogen tetroxide; fuel_2=monomethylhydrazine; thrust=}}
+launch_payload_mass : @{kg=6000; lb=13228}
+launch_payload_vol  : @{cubic_meters=25; cubic_feet=883}
+return_payload_mass : @{kg=3000; lb=6614}
+return_payload_vol  : @{cubic_meters=11; cubic_feet=388}
+pressurized_capsule : @{payload_volume=}
+trunk               : @{trunk_volume=; cargo=}
+height_w_trunk      : @{meters=7.2; feet=23.6}
+diameter            : @{meters=3.7; feet=12}
+flickr_images       : {https://farm8.staticflickr.com/7647/16581815487_6d56cb32e1_b.jpg, https://farm1.staticflickr.com/780/21119686299_c88f63e350_b.jpg, https://farm9.staticflickr.com/8588/16661791299_a236e2f5dc_b.jpg}
+wikipedia           : https://en.wikipedia.org/wiki/Dragon_2
+description         : Dragon 2 (also Crew Dragon, Dragon V2, or formerly DragonRider) is the second version of the SpaceX Dragon spacecraft, which will be a human-rated vehicle. It includes a set of four side-mounted thruster pods with two SuperDraco engines each, which can serve as a launch escape system or launch abort system (LAS). In addition, it has much larger windows, new flight computers and avionics, and redesigned solar arrays, and a modified outer mold line from the initial cargo Dragon that has been flying for several years.
+```
+
+#### Specific dragon capsule
+
+```powershell
+Get-SXDragon -DragonID dragon1
+```
+
+```text
+id                  : dragon1
+name                : Dragon 1
+type                : capsule
+active              : True
+crew_capacity       : 0
+sidewall_angle_deg  : 15
+orbit_duration_yr   : 2
+dry_mass_kg         : 4200
+dry_mass_lb         : 9300
+first_flight        : 2010-12-08
+heat_shield         : @{material=PICA-X; size_meters=3.6; temp_degrees=3000; dev_partner=NASA}
+thrusters           : {@{type=Draco; amount=18; pods=4; fuel_1=nitrogen tetroxide; fuel_2=monomethylhydrazine; thrust=}}
+launch_payload_mass : @{kg=6000; lb=13228}
+launch_payload_vol  : @{cubic_meters=25; cubic_feet=883}
+return_payload_mass : @{kg=3000; lb=6614}
+return_payload_vol  : @{cubic_meters=11; cubic_feet=388}
+pressurized_capsule : @{payload_volume=}
+trunk               : @{trunk_volume=; cargo=}
+height_w_trunk      : @{meters=7.2; feet=23.6}
+diameter            : @{meters=3.7; feet=12}
+flickr_images       : {https://www.spacex.com/sites/spacex/files/styles/media_gallery_large/public/2015_-_04_crs5_dragon_orbit13.jpg?itok=9p8_l7UP, https://www.spacex.com/sites/spacex/files/styles/media_gallery_large/public/2012_-_4_dragon_grapple_cots2-1.jpg?itok=R2-SeuMX, https://farm3.staticflickr.com/2815/32761844973_4b55b27d3c_b.jpg, https://farm9.staticflickr.com/8618/16649075267_d18cbb4342_b.jpg}
+wikipedia           : https://en.wikipedia.org/wiki/SpaceX_Dragon
+description         : Dragon is a reusable spacecraft developed by SpaceX, an American private space transportation company based in Hawthorne, California. Dragon is launched into space by the SpaceX Falcon 9 two-stage-to-orbit launch vehicle. The Dragon spacecraft was originally designed for human travel, but so far has only been used to deliver cargo to the International Space Station (ISS).
+```
+
+### Core data
+
+#### All core data
+
+```powershell
+Get-SXCore
+```
+
+```text
+core_serial          : B1052
+block                : 5
+status               : active
+original_launch      : 
+original_launch_unix : 
+missions             : {}
+reuse_count          : 0
+rtls_attempts        : 0
+rtls_landings        : 0
+asds_attempts        : 0
+asds_landings        : 0
+water_landing        : False
+details              : On test stand at McGregor.
+
+core_serial          : B1053
+block                : 5
+status               : active
+original_launch      : 
+original_launch_unix : 
+missions             : {}
+reuse_count          : 0
+rtls_attempts        : 0
+rtls_landings        : 0
+asds_attempts        : 0
+asds_landings        : 0
+water_landing        : False
+details              : Testing at McGregor.
+
+core_serial          : Merlin1A
+block                : 
+status               : expended
+original_launch      : 3/24/06 10:30:00 PM
+original_launch_unix : 1143239400
+missions             : {@{name=FalconSat; flight=1}}
+reuse_count          : 0
+rtls_attempts        : 0
+rtls_landings        : 0
+asds_attempts        : 0
+asds_landings        : 0
+water_landing        : False
+details              : Engine failure at T+33 seconds resulted in loss of vehicle
+```
+
+#### Specific core
+
+```powershell
+Get-SXCore -Serial B1032
+```
+
+```text
+core_serial          : B1032
+block                : 3
+status               : destroyed
+original_launch      : 5/1/17 11:15:00 AM
+original_launch_unix : 1493637300
+missions             : {@{name=NROL-76; flight=39}, @{name=SES-16 / GovSat-1; flight=54}}
+reuse_count          : 1
+rtls_attempts        : 1
+rtls_landings        : 1
+asds_attempts        : 0
+asds_landings        : 0
+water_landing        : True
+details              : Daytime RTLS landing, helped launch first SpaceX mission for the NRO
+```
+
+### Historical Event data
+
+#### All historical events
+
+```powershell
+Get-SXHistory
+```
+
+```text
+id              : 1
+title           : Falcon 1 Makes History
+event_date_utc  : 9/28/08 11:15:00 PM
+event_date_unix : 1222643700
+flight_number   : 4
+details         : Falcon 1 becomes the first privately developed liquid fuel rocket to reach Earth orbit.
+links           : @{reddit=; article=http://www.spacex.com/news/2013/02/11/flight-4-launch-update-0; wikipedia=https://en.wikipedia.org/wiki/Falcon_1}
+
+id              : 2
+title           : SpaceX Wins $1.6B CRS Contract
+event_date_utc  : 12/23/08 1:00:00 AM
+event_date_unix : 1229994000
+flight_number   : 
+details         : NASA awards SpaceX $1.6B Commercial Resupply Services (CRS) contract.
+links           : @{reddit=; article=https://www.nasaspaceflight.com/2008/12/spacex-and-orbital-win-huge-crs-contract-from-nasa/; wikipedia=https://en.wikipedia.org/wiki/Commercial_Resupply_Services}
+
+id              : 3
+title           : Falcon 1 Flight 5 Makes History
+event_date_utc  : 7/13/09 3:35:00 AM
+event_date_unix : 1247456100
+flight_number   : 5
+details         : Falcon 1 Flight 5 makes history, becoming the first privately developed liquid fuel rocket to deliver a commercial satellite to Earth orbit.
+links           : @{reddit=; article=http://www.spacex.com/news/2013/02/12/falcon-1-flight-5; wikipedia=https://en.wikipedia.org/wiki/Falcon_1}
+```
+
+#### Specific historical event
+
+```powershell
+Get-SXHistory -ID 1
+```
+
+```text
+id              : 1
+title           : Falcon 1 Makes History
+event_date_utc  : 9/28/08 11:15:00 PM
+event_date_unix : 1222643700
+flight_number   : 4
+details         : Falcon 1 becomes the first privately developed liquid fuel rocket to reach Earth orbit.
+links           : @{reddit=; article=http://www.spacex.com/news/2013/02/11/flight-4-launch-update-0; wikipedia=https://en.wikipedia.org/wiki/Falcon_1}
 ```
 
 ## Related posts
