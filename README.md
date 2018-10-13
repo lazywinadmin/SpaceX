@@ -351,11 +351,12 @@ ceo            : Elon Musk
 cto            : Elon Musk
 coo            : Gwynne Shotwell
 cto_propulsion : Tom Mueller
-valuation      : 15000000000
+valuation      : 27500000000
 headquarters   : @{address=Rocket Road; city=Hawthorne; state=California}
-summary        : SpaceX designs, manufactures and launches advanced rockets and
-                 spacecraft. The company was founded in 2002 to revolutionize space
-                 technology, with the ultimate goal of enabling people to live on other
+links          : @{website=https://www.spacex.com/; flickr=https://www.flickr.com/photos/spacex/;
+                 twitter=https://twitter.com/SpaceX; elon_twitter=https://twitter.com/elonmusk}
+summary        : SpaceX designs, manufactures and launches advanced rockets and spacecraft. The company was founded in
+                 2002 to revolutionize space technology, with the ultimate goal of enabling people to live on other
                  planets.
 ```
 
