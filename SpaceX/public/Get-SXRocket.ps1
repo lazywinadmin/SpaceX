@@ -24,12 +24,12 @@ function Get-SXRocket {
         if($Rocket)
         {
             $Splat = @{
-                Uri = "https://api.spacexdata.com/v2/rockets/$Rocket"
+                Uri = "https://api.spacexdata.com/v3/rockets/$Rocket"
             }
         }
         else{
             $Splat = @{
-                Uri = "https://api.spacexdata.com/v2/rockets"
+                Uri = "https://api.spacexdata.com/v3/rockets"
             }
         }
 
