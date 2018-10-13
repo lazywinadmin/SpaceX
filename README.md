@@ -411,15 +411,11 @@ Get-SXRocket
 ```
 
 ```text
-
-
-id               : falcon1
-name             : Falcon 1
-type             : rocket
+id               : 1
 active           : False
 stages           : 2
 boosters         : 0
-cost_per_launch  : 67000000
+cost_per_launch  : 6700000
 success_rate_pct : 40
 first_flight     : 2006-03-24
 country          : Republic of the Marshall Islands
@@ -428,57 +424,86 @@ height           : @{meters=22.25; feet=73}
 diameter         : @{meters=1.68; feet=5.5}
 mass             : @{kg=30146; lb=66460}
 payload_weights  : {@{id=leo; name=Low Earth Orbit; kg=450; lb=992}}
-first_stage      : @{reusable=False; engines=1; fuel_amount_tons=44.3; burn_time_sec=169; thrust_sea_level=; thrust_vacuum=}
+first_stage      : @{reusable=False; engines=1; fuel_amount_tons=44.3; burn_time_sec=169; thrust_sea_level=;
+                   thrust_vacuum=}
 second_stage     : @{engines=1; fuel_amount_tons=3.38; burn_time_sec=378; thrust=; payloads=}
-engines          : @{number=1; type=merlin; version=1C; layout=single; engine_loss_max=0; propellant_1=liquid oxygen; propellant_2=RP-1 kerosene; thrust_sea_level=; thrust_vacuum=; thrust_to_weight=96}
+engines          : @{number=1; type=merlin; version=1C; layout=single; engine_loss_max=0; propellant_1=liquid oxygen;
+                   propellant_2=RP-1 kerosene; thrust_sea_level=; thrust_vacuum=; thrust_to_weight=96}
 landing_legs     : @{number=0; material=}
-description      : The Falcon 1 was an expendable launch system privately developed and manufactured by SpaceX during 2006-2009. On 28 September 2008, Falcon 1 became the first privately-developed liquid-fuel 
-                   launch vehicle to go into orbit around the Earth.
+flickr_images    : {https://www.spacex.com/sites/spacex/files/styles/media_gallery_large/public/2009_-_01_liftoff_south
+                   _full_wide_ro8a1280_edit.jpg?itok=8loiSGt1, https://www.spacex.com/sites/spacex/files/styles/media_g
+                   allery_large/public/2009_-_02_default_liftoff_west_full_wide_nn6p2062_xl.jpg?itok=p776nHsM}
+wikipedia        : https://en.wikipedia.org/wiki/Falcon_1
+description      : The Falcon 1 was an expendable launch system privately developed and manufactured by SpaceX during
+                   2006-2009. On 28 September 2008, Falcon 1 became the first privately-developed liquid-fuel launch
+                   vehicle to go into orbit around the Earth.
+rocket_id        : falcon1
+rocket_name      : Falcon 1
+rocket_type      : rocket
 
-id               : falcon9
-name             : Falcon 9
-type             : rocket
+id               : 2
 active           : True
 stages           : 2
 boosters         : 0
-cost_per_launch  : 61200000
-success_rate_pct : 94
+cost_per_launch  : 50000000
+success_rate_pct : 97
 first_flight     : 2010-06-04
 country          : United States
 company          : SpaceX
 height           : @{meters=70; feet=229.6}
 diameter         : @{meters=3.7; feet=12}
 mass             : @{kg=549054; lb=1207920}
-payload_weights  : {@{id=leo; name=Low Earth Orbit; kg=22800; lb=50265}, @{id=gto; name=Geosynchronous Transfer Orbit; kg=8300; lb=18300}, @{id=mars; name=Mars Orbit; kg=4020; lb=8860}}
-first_stage      : @{reusable=True; engines=9; fuel_amount_tons=385; burn_time_sec=162; thrust_sea_level=; thrust_vacuum=}
+payload_weights  : {@{id=leo; name=Low Earth Orbit; kg=22800; lb=50265}, @{id=gto; name=Geosynchronous Transfer Orbit;
+                   kg=8300; lb=18300}, @{id=mars; name=Mars Orbit; kg=4020; lb=8860}}
+first_stage      : @{reusable=True; engines=9; fuel_amount_tons=385; burn_time_sec=162; thrust_sea_level=;
+                   thrust_vacuum=}
 second_stage     : @{engines=1; fuel_amount_tons=90; burn_time_sec=397; thrust=; payloads=}
-engines          : @{number=9; type=merlin; version=1D+; layout=octaweb; engine_loss_max=2; propellant_1=liquid oxygen; propellant_2=RP-1 kerosene; thrust_sea_level=; thrust_vacuum=; thrust_to_weight=180.1}
+engines          : @{number=9; type=merlin; version=1D+; layout=octaweb; engine_loss_max=2; propellant_1=liquid
+                   oxygen; propellant_2=RP-1 kerosene; thrust_sea_level=; thrust_vacuum=; thrust_to_weight=180.1}
 landing_legs     : @{number=4; material=carbon fiber}
-description      : Falcon 9 is a two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport of satellites and the Dragon spacecraft into orbit.
+flickr_images    : {https://farm1.staticflickr.com/929/28787338307_3453a11a77_b.jpg,
+                   https://farm4.staticflickr.com/3955/32915197674_eee74d81bb_b.jpg,
+                   https://farm1.staticflickr.com/293/32312415025_6841e30bf1_b.jpg,
+                   https://farm1.staticflickr.com/623/23660653516_5b6cb301d1_b.jpg...}
+wikipedia        : https://en.wikipedia.org/wiki/Falcon_9
+description      : Falcon 9 is a two-stage rocket designed and manufactured by SpaceX for the reliable and safe
+                   transport of satellites and the Dragon spacecraft into orbit.
+rocket_id        : falcon9
+rocket_name      : Falcon 9
+rocket_type      : rocket
 
-id               : falconheavy
-name             : Falcon Heavy
-type             : rocket
-active           : False
+id               : 3
+active           : True
 stages           : 2
 boosters         : 2
 cost_per_launch  : 90000000
-success_rate_pct : 0
-first_flight     : TBD
+success_rate_pct : 100
+first_flight     : 2018-02-06
 country          : United States
 company          : SpaceX
 height           : @{meters=70; feet=229.6}
 diameter         : @{meters=12.2; feet=39.9}
 mass             : @{kg=1420788; lb=3125735}
-payload_weights  : {@{id=leo; name=Low Earth Orbit; kg=63800; lb=140660}, @{id=gto; name=Geosynchronous Transfer Orbit; kg=26700; lb=58860}, @{id=mars; name=Mars Orbit; kg=16800; lb=37040}, @{id=pluto; 
-                   name=Pluto Orbit; kg=3500; lb=7720}}
-first_stage      : @{reusable=True; engines=27; fuel_amount_tons=1155; cores=3; burn_time_sec=162; thrust_sea_level=; thrust_vacuum=}
+payload_weights  : {@{id=leo; name=Low Earth Orbit; kg=63800; lb=140660}, @{id=gto; name=Geosynchronous Transfer
+                   Orbit; kg=26700; lb=58860}, @{id=mars; name=Mars Orbit; kg=16800; lb=37040}, @{id=pluto; name=Pluto
+                   Orbit; kg=3500; lb=7720}}
+first_stage      : @{reusable=True; engines=27; fuel_amount_tons=1155; cores=3; burn_time_sec=162; thrust_sea_level=;
+                   thrust_vacuum=}
 second_stage     : @{engines=1; burn_time_sec=397; thrust=; payloads=}
-engines          : @{number=27; type=merlin; version=1D+; layout=octaweb; engine_loss_max=6; propellant_1=subcooled liquid oxygen; propellant_2= RP-1 kerosene; thrust_sea_level=; thrust_vacuum=; 
-                   thrust_to_weight=180.1}
+engines          : @{number=27; type=merlin; version=1D+; layout=octaweb; engine_loss_max=6; propellant_1=liquid
+                   oxygen; propellant_2=RP-1 kerosene; thrust_sea_level=; thrust_vacuum=; thrust_to_weight=180.1}
 landing_legs     : @{number=12; material=carbon fiber}
-description      : With the ability to lift into orbit over 54 metric tons (119,000 lb)--a mass equivalent to a 737 jetliner loaded with passengers, crew, luggage and fuel--Falcon Heavy can lift more than 
-                   twice the payload of the next closest operational vehicle, the Delta IV Heavy, at one-third the cost.
+flickr_images    : {https://farm5.staticflickr.com/4599/38583829295_581f34dd84_b.jpg,
+                   https://farm5.staticflickr.com/4645/38583830575_3f0f7215e6_b.jpg,
+                   https://farm5.staticflickr.com/4696/40126460511_b15bf84c85_b.jpg,
+                   https://farm5.staticflickr.com/4711/40126461411_aabc643fd8_b.jpg}
+wikipedia        : https://en.wikipedia.org/wiki/Falcon_Heavy
+description      : With the ability to lift into orbit over 54 metric tons (119,000 lb)--a mass equivalent to a 737
+                   jetliner loaded with passengers, crew, luggage and fuel--Falcon Heavy can lift more than twice the
+                   payload of the next closest operational vehicle, the Delta IV Heavy, at one-third the cost.
+rocket_id        : falconheavy
+rocket_name      : Falcon Heavy
+rocket_type      : rocket
 ```
 
 #### Specific rocket
@@ -488,32 +513,38 @@ Get-SXRocket -Rocket falconheavy
 ```
 
 ```text
-
-
-id               : falconheavy
-name             : Falcon Heavy
-type             : rocket
-active           : False
+id               : 3
+active           : True
 stages           : 2
 boosters         : 2
 cost_per_launch  : 90000000
-success_rate_pct : 0
-first_flight     : TBD
+success_rate_pct : 100
+first_flight     : 2018-02-06
 country          : United States
 company          : SpaceX
 height           : @{meters=70; feet=229.6}
 diameter         : @{meters=12.2; feet=39.9}
 mass             : @{kg=1420788; lb=3125735}
-payload_weights  : {@{id=leo; name=Low Earth Orbit; kg=63800; lb=140660}, @{id=gto; name=Geosynchronous Transfer Orbit; kg=26700; lb=58860}, @{id=mars; name=Mars Orbit; kg=16800; lb=37040}, @{id=pluto;
-                   name=Pluto Orbit; kg=3500; lb=7720}}
-first_stage      : @{reusable=True; engines=27; fuel_amount_tons=1155; cores=3; burn_time_sec=162; thrust_sea_level=; thrust_vacuum=}
+payload_weights  : {@{id=leo; name=Low Earth Orbit; kg=63800; lb=140660}, @{id=gto; name=Geosynchronous Transfer
+                   Orbit; kg=26700; lb=58860}, @{id=mars; name=Mars Orbit; kg=16800; lb=37040}, @{id=pluto; name=Pluto
+                   Orbit; kg=3500; lb=7720}}
+first_stage      : @{reusable=True; engines=27; fuel_amount_tons=1155; cores=3; burn_time_sec=162; thrust_sea_level=;
+                   thrust_vacuum=}
 second_stage     : @{engines=1; burn_time_sec=397; thrust=; payloads=}
-engines          : @{number=27; type=merlin; version=1D+; layout=octaweb; engine_loss_max=6; propellant_1=subcooled liquid oxygen; propellant_2= RP-1 kerosene; thrust_sea_level=; thrust_vacuum=;
-                   thrust_to_weight=180.1}
+engines          : @{number=27; type=merlin; version=1D+; layout=octaweb; engine_loss_max=6; propellant_1=liquid
+                   oxygen; propellant_2=RP-1 kerosene; thrust_sea_level=; thrust_vacuum=; thrust_to_weight=180.1}
 landing_legs     : @{number=12; material=carbon fiber}
-description      : With the ability to lift into orbit over 54 metric tons (119,000 lb)--a mass equivalent to a 737 jetliner loaded with passengers, crew, luggage and fuel--Falcon Heavy can lift more than
-                   twice the payload of the next closest operational vehicle, the Delta IV Heavy, at one-third the cost.
-
+flickr_images    : {https://farm5.staticflickr.com/4599/38583829295_581f34dd84_b.jpg,
+                   https://farm5.staticflickr.com/4645/38583830575_3f0f7215e6_b.jpg,
+                   https://farm5.staticflickr.com/4696/40126460511_b15bf84c85_b.jpg,
+                   https://farm5.staticflickr.com/4711/40126461411_aabc643fd8_b.jpg}
+wikipedia        : https://en.wikipedia.org/wiki/Falcon_Heavy
+description      : With the ability to lift into orbit over 54 metric tons (119,000 lb)--a mass equivalent to a 737
+                   jetliner loaded with passengers, crew, luggage and fuel--Falcon Heavy can lift more than twice the
+                   payload of the next closest operational vehicle, the Delta IV Heavy, at one-third the cost.
+rocket_id        : falconheavy
+rocket_name      : Falcon Heavy
+rocket_type      : rocket
 ```
 
 ### Mission data

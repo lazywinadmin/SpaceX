@@ -13,7 +13,7 @@ function Get-SXRocket {
     Get-SXRocket
 
     .EXAMPLE
-    Get-SXRocket -Rocket Falconheavy
+    Get-SXRocket -Rocket falconheavy
     
     .NOTES
     https://github.com/lazywinadmin/spacex
@@ -24,12 +24,12 @@ function Get-SXRocket {
         if($Rocket)
         {
             $Splat = @{
-                Uri = "https://api.spacexdata.com/v2/rockets/$Rocket"
+                Uri = "https://api.spacexdata.com/v3/rockets/$Rocket"
             }
         }
         else{
             $Splat = @{
-                Uri = "https://api.spacexdata.com/v2/rockets"
+                Uri = "https://api.spacexdata.com/v3/rockets"
             }
         }
 
