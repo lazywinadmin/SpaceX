@@ -13,7 +13,7 @@ function Get-SXDragon {
   Get-SXDragon
 
   .EXAMPLE
-  Get-SXPaylod -DragonID "dragon1"
+  Get-SXPaylod -DragonID dragon1
   
   .NOTES
   https://github.com/lazywinadmin/spacex

@@ -13,7 +13,7 @@ function Get-SXShip {
   Get-SXShip
 
   .EXAMPLE
-  Get-SXShip -ShipID "RACHEL"
+  Get-SXShip -ShipID RACHEL
   
   .NOTES
   https://github.com/lazywinadmin/spacex

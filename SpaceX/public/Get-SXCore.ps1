@@ -13,7 +13,7 @@ function Get-SXCore {
   Get-SXCore
 
   .EXAMPLE
-  Get-SXCORE -Serial "B1032"
+  Get-SXCORE -Serial B1032
   
   .NOTES
   https://github.com/lazywinadmin/spacex
