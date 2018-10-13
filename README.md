@@ -71,102 +71,123 @@ Function    Get-SXRocket    1.0.0.2 SpaceX
 #### Upcoming
 
 ```powershell
-Get-SXLaunch -upcoming
+Get-SXLaunch -Upcoming
 ```
 
 ```text
-flight_number     : 55
-launch_year       : 2018
-launch_date_unix  : 1517941800
-launch_date_utc   : 2018-02-06T18:30:00Z
-launch_date_local : 2018-02-06T13:30:00-05:00
-rocket            : @{rocket_id=falconheavy; rocket_name=Falcon Heavy; rocket_type=FT; 
-                    first_stage=; second_stage=}
-telemetry         : @{flight_club=}
-reuse             : @{core=False; side_core1=True; side_core2=True; fairings=False; 
-                    capsule=False}
-launch_site       : @{site_id=ksc_lc_39a; site_name=KSC LC 39A; site_name_long=Kennedy 
-                    Space Center Historic Launch Complex 39A}
-launch_success    : 
-links             : @{mission_patch=; reddit_campaign=https://www.reddit.com/r/spacex/com
-                    ments/7hjp03/falcon_heavy_demo_launch_campaign_thread/; 
-                    reddit_launch=; reddit_recovery=; reddit_media=; presskit=; 
-                    article_link=; video_link=}
-details           : 
+flight_number           : 70
+mission_name            : Es’hail 2
+mission_id              : {}
+launch_year             : 2018
+launch_date_unix        : 1541030400
+launch_date_utc         : 2018-11-01T00:00:00.000Z
+launch_date_local       : 2018-10-31T20:00:00-04:00
+is_tentative            : True
+tentative_max_precision : month
+rocket                  : @{rocket_id=falcon9; rocket_name=Falcon 9; rocket_type=FT; first_stage=; second_stage=;
+                          fairings=}
+ships                   : {}
+telemetry               : @{flight_club=}
+launch_site             : @{site_id=ccafs_slc_40; site_name=CCAFS SLC 40; site_name_long=Cape Canaveral Air Force
+                          Station Space Launch Complex 40}
+launch_success          :
+links                   : @{mission_patch=; mission_patch_small=; reddit_campaign=; reddit_launch=; reddit_recovery=;
+                          reddit_media=; presskit=; article_link=; wikipedia=; video_link=;
+                          flickr_images=System.Object[]}
+details                 :
+upcoming                : True
+static_fire_date_utc    :
+static_fire_date_unix   :
 
-flight_number     : 56
-launch_year       : 2018
-launch_date_unix  : 1518272520
-launch_date_utc   : 2018-02-10T14:22:00Z
-launch_date_local : 2018-02-10T09:22:00-05:00
-rocket            : @{rocket_id=falcon9; rocket_name=Falcon 9; rocket_type=FT; 
-                    first_stage=; second_stage=}
-telemetry         : @{flight_club=}
-reuse             : @{core=True; side_core1=False; side_core2=False; fairings=False; 
-                    capsule=False}
-launch_site       : @{site_id=vafb_slc_4e; site_name=VAFB SLC 4E; 
-                    site_name_long=Vandenberg Air Force Base Space Launch Complex 4E}
-launch_success    : 
-links             : @{mission_patch=; reddit_campaign=https://www.reddit.com/r/spacex/com
-                    ments/7qnflk/paz_microsat2a_2b_launch_campaign_thread/; 
-                    reddit_launch=; reddit_recovery=; reddit_media=; presskit=; 
-                    article_link=; video_link=}
-details           : 
+flight_number           : 71
+mission_name            : SSO-A
+mission_id              : {}
+launch_year             : 2018
+launch_date_unix        : 1542585600
+launch_date_utc         : 2018-11-19T00:00:00.000Z
+launch_date_local       : 2018-11-18T16:00:00-08:00
+is_tentative            : True
+tentative_max_precision : day
+rocket                  : @{rocket_id=falcon9; rocket_name=Falcon 9; rocket_type=FT; first_stage=; second_stage=;
+                          fairings=}
+ships                   : {}
+telemetry               : @{flight_club=}
+launch_site             : @{site_id=vafb_slc_4e; site_name=VAFB SLC 4E; site_name_long=Vandenberg Air Force Base Space
+                          Launch Complex 4E}
+launch_success          :
+links                   : @{mission_patch=; mission_patch_small=; reddit_campaign=; reddit_launch=; reddit_recovery=;
+                          reddit_media=; presskit=; article_link=; wikipedia=; video_link=;
+                          flickr_images=System.Object[]}
+details                 :
+upcoming                : True
+static_fire_date_utc    :
+static_fire_date_unix   :
 
-flight_number     : 57
-launch_year       : 2018
-launch_date_unix  : 1518566400
-launch_date_utc   : 2018-02-14T00:00:00Z
-launch_date_local : 2018-02-14T00:00:00-05:00
-rocket            : @{rocket_id=falcon9; rocket_name=Falcon 9; rocket_type=FT; 
-                    first_stage=; second_stage=}
-telemetry         : @{flight_club=}
-reuse             : @{core=False; side_core1=False; side_core2=False; fairings=False; 
-                    capsule=False}
-launch_site       : @{site_id=ccafs_slc_40; site_name=CCAFS SLC 40; site_name_long=Cape 
-                    Canaveral Air Force Station Space Launch Complex 40}
-launch_success    : 
-links             : @{mission_patch=; reddit_campaign=https://www.reddit.com/r/spacex/com
-                    ments/7r5pyn/hispasat_30w6_launch_campaign_thread/; reddit_launch=; 
-                    reddit_recovery=; reddit_media=; presskit=; article_link=; 
-                    video_link=}
-details           : 
+flight_number           : 72
+mission_name            : CRS-16
+mission_id              : {EE86F74}
+launch_year             : 2018
+launch_date_unix        : 1543353540
+launch_date_utc         : 2018-11-27T21:19:00.000Z
+launch_date_local       : 2018-11-27T16:19:00-05:00
+is_tentative            : True
+tentative_max_precision : hour
+rocket                  : @{rocket_id=falcon9; rocket_name=Falcon 9; rocket_type=FT; first_stage=; second_stage=;
+                          fairings=}
+ships                   : {}
+telemetry               : @{flight_club=}
+launch_site             : @{site_id=ccafs_slc_40; site_name=CCAFS SLC 40; site_name_long=Cape Canaveral Air Force
+                          Station Space Launch Complex 40}
+launch_success          :
+links                   : @{mission_patch=; mission_patch_small=; reddit_campaign=; reddit_launch=; reddit_recovery=;
+                          reddit_media=; presskit=; article_link=; wikipedia=; video_link=;
+                          flickr_images=System.Object[]}
+details                 :
+upcoming                : True
+static_fire_date_utc    :
+static_fire_date_unix   :
 ```
 
-### Latest
+#### Latest
 
 ```powershell
 Get-SXLaunch -Latest
 ```
 
 ```text
-flight_number     : 54
-launch_year       : 2018
-launch_date_unix  : 1517433900
-launch_date_utc   : 2018-01-31T21:25:00Z
-launch_date_local : 2018-01-31T16:25:00-05:00
-rocket            : @{rocket_id=falcon9; rocket_name=Falcon 9; rocket_type=FT;
-                    first_stage=; second_stage=}
-telemetry         : @{flight_club=}
-reuse             : @{core=True; side_core1=False; side_core2=False; fairings=False;
-                    capsule=False}
-launch_site       : @{site_id=ccafs_slc_40; site_name=CCAFS SLC 40; site_name_long=Cape
-                    Canaveral Air Force Station Space Launch Complex 40}
-launch_success    : True
-links             : @{mission_patch=https://i.imgur.com/UJTbQ1f.png; reddit_campaign=http
-                    s://www.reddit.com/r/spacex/comments/7olw86/govsat1_ses16_launch_camp
-                    aign_thread/; reddit_launch=https://www.reddit.com/r/spacex/comments/
-                    7tvtbh/rspacex_govsat1_official_launch_discussion/;
-                    reddit_recovery=; reddit_media=https://www.reddit.com/r/spacex/commen
-                    ts/7tzzwy/rspacex_govsat1_media_thread_videos_images_gifs/; presskit=
-                    http://www.spacex.com/sites/spacex/files/govsat1presskit.pdf; article
-                    _link=https://spaceflightnow.com/2018/01/31/spacex-rocket-flies-on-60
-                    th-anniversary-of-first-u-s-satellite-launch/;
-                    video_link=https://www.youtube.com/watch?v=ScYUA51-POQ}
-details           : Reused booster from the classified NROL-76 mission in May 2017.
-                    Following a successful experimental ocean landing that used three
-                    engines, the booster unexpectedly remained intact; Elon Musk stated
-                    in a tweet that SpaceX will attempt to tow the booster to shore.
+flight_number           : 69
+mission_name            : SAOCOM 1A
+mission_id              : {}
+launch_year             : 2018
+launch_date_unix        : 1538965320
+launch_date_utc         : 2018-10-08T02:22:00.000Z
+launch_date_local       : 2018-10-07T19:22:00-07:00
+is_tentative            : False
+tentative_max_precision : hour
+rocket                  : @{rocket_id=falcon9; rocket_name=Falcon 9; rocket_type=FT; first_stage=; second_stage=;
+                          fairings=}
+ships                   : {}
+telemetry               : @{flight_club=https://www.flightclub.io/result/2d?code=SAOCOM1A}
+launch_site             : @{site_id=vafb_slc_4e; site_name=VAFB SLC 4E; site_name_long=Vandenberg Air Force Base Space
+                          Launch Complex 4E}
+launch_success          : True
+links                   : @{mission_patch=https://images2.imgbox.com/66/d2/oVB1ofaZ_o.png;
+                          mission_patch_small=https://images2.imgbox.com/ae/11/H85gskPQ_o.png; reddit_campaign=https://
+                          www.reddit.com/r/spacex/comments/9fwj9o/saocom_1a_launch_campaign_thread/; reddit_launch=http
+                          s://www.reddit.com/r/spacex/comments/9lazvr/rspacex_saocom_1a_official_launch_discussion/;
+                          reddit_recovery=; reddit_media=https://www.reddit.com/r/spacex/comments/9m3ly5/rspacex_saocom
+                          _1a_media_thread_videos_images_gifs/;
+                          presskit=https://www.spacex.com/sites/spacex/files/saocom1apresskit.pdf; article_link=https:/
+                          /spaceflightnow.com/2018/10/08/spacex-aces-first-rocket-landing-in-california-after-launching
+                          -argentine-satellite/; wikipedia=https://en.wikipedia.org/wiki/SAOCOM;
+                          video_link=https://www.youtube.com/watch?v=vr_C6LQ7mHc; flickr_images=System.Object[]}
+details                 : SpaceX's seventeenth flight of 2018 will be the first launch of the Saocom Earth observation
+                          satellite constellation of the Argentine Space Agency CONAE. The second launch of Saocom 1B
+                          will happen in 2019. This flight will mark the first RTLS launch out of Vandenberg, with a
+                          landing on the concrete pad at SLC-4W, very close to the launch pad.
+upcoming                : False
+static_fire_date_utc    : 2018-10-02T21:00:00.000Z
+static_fire_date_unix   : 1538514000
 ```
 
 ### Launch sites data
