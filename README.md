@@ -18,6 +18,7 @@ PowerShell module to interact with [api.spacexdata.com](https://github.com/r-spa
   - [Capsules data](#capsules-data)
   - [Parts data](#parts-data)
   - [Company data](#company-data)
+  - [Api data](#api-data)
   - [Rocket data](#rocket-data)
   - [Mission data](#mission-data)
 - [Related posts](#related-posts)
@@ -49,12 +50,14 @@ Get-Command -module SpaceX
 ```text
 CommandType Name            Version Source
 ----------- ----            ------- ------
-Function    Get-SXCapsule   1.0.0.0 spacex
-Function    Get-SXCompany   1.0.0.0 spacex
-Function    Get-SXLaunch    1.0.0.0 spacex
-Function    Get-SXLaunchpad 1.0.0.0 spacex
-Function    Get-SXPart      1.0.0.0 spacex
-Function    Get-SXRocket    1.0.0.0 spacex
+Function    Get-SXApi       1.0.0.2 SpaceX
+Function    Get-SXCapsule   1.0.0.2 SpaceX
+Function    Get-SXCompany   1.0.0.2 SpaceX
+Function    Get-SXLaunch    1.0.0.2 SpaceX
+Function    Get-SXLaunchpad 1.0.0.2 SpaceX
+Function    Get-SXMission   1.0.0.2 SpaceX
+Function    Get-SXPart      1.0.0.2 SpaceX
+Function    Get-SXRocket    1.0.0.2 SpaceX
 ```
 
 ### Launches data
@@ -361,6 +364,23 @@ summary        : SpaceX designs, manufactures and launches advanced rockets and
                  spacecraft. The company was founded in 2002 to revolutionize space
                  technology, with the ultimate goal of enabling people to live on other
                  planets.
+```
+
+### API data
+
+```powershell
+Get-SXApi
+```
+
+```text
+project_name      : SpaceX-API
+version           : 3.0.0
+project_link      : https://github.com/r-spacex/SpaceX-API
+docs              : https://documenter.getpostman.com/view/2025350/RWaEzAiG
+organization      : r/SpaceX
+organization_link : https://github.com/r-spacex
+description       : Open Source REST API for rocket, core, capsule, pad, and launch data, created and maintained by
+                    the developers of the r/SpaceX organization
 ```
 
 ### Rocket data
