@@ -25,18 +25,18 @@ function Get-SXLaunch {
     try {
         if ($Latest) {
             $Splat = @{
-                Uri = "https://api.spacexdata.com/v2/launches/latest"
+                Uri = "https://api.spacexdata.com/v3/launches/latest"
             }
         }
         elseif ($Upcoming) {
             $Splat = @{
-                Uri = "https://api.spacexdata.com/v2/launches/upcoming"
+                Uri = "https://api.spacexdata.com/v3/launches/upcoming"
             }
         }
 
         else {
             $Splat = @{
-                Uri = "https://api.spacexdata.com/v2/launches"
+                Uri = "https://api.spacexdata.com/v3/launches"
             }
         }
 
