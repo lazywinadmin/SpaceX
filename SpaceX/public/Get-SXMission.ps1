@@ -13,7 +13,7 @@ function Get-SXMission {
     Get-SXMission
 
     .EXAMPLE
-    Get-SXMission -MissionId F3364BF
+    Get-SXMission -Mission F3364BF
     
     .NOTES
     https://github.com/lazywinadmin/spacex

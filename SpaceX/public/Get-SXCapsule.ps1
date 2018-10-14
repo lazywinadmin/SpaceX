@@ -10,7 +10,7 @@ function Get-SXCapsule {
     Get-SXCapsule
 
     .EXAMPLE
-    Get-SXCapsule -Capsule crewdragon
+    Get-SXCapsule -Capsule C109
     
     .NOTES
     https://github.com/lazywinadmin/spacex

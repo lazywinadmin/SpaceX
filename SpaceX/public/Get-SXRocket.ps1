@@ -13,7 +13,7 @@ function Get-SXRocket {
     Get-SXRocket
 
     .EXAMPLE
-    Get-SXRocket -Rocket Falconheavy
+    Get-SXRocket -Rocket falconheavy
     
     .NOTES
     https://github.com/lazywinadmin/spacex
