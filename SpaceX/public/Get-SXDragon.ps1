@@ -10,13 +10,15 @@ function Get-SXDragon {
   Specify the Dragon Capsule ID
   
   .EXAMPLE
-  Get-SXDragon
+  C:\PS> Get-SXDragon
+  Gets data about all the dragons
 
   .EXAMPLE
   Get-SXDragon -ID dragon1
+  Gets data about the dragon with the specified ID
   
   .NOTES
-  https://github.com/lazywinadmin/spacex
+  https://github.com/lazywinadmin/SpaceX
   #>
   [CmdletBinding()]
   PARAM($ID)
