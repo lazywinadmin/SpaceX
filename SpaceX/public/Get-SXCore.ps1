@@ -10,13 +10,15 @@ function Get-SXCore {
   Specify the Core Serial
   
   .EXAMPLE
-  Get-SXCore
+  C:\PS> Get-SXCore
+  Gets data about all the cores
 
   .EXAMPLE
-  Get-SXCore -Serial B1032
+  C:\PS> Get-SXCore -Serial B1032
+  Gets data about the core with the specified serial
   
   .NOTES
-  https://github.com/lazywinadmin/spacex
+  https://github.com/lazywinadmin/SpaceX
   #>
   [CmdletBinding()]
   PARAM($Serial)
