@@ -1,9 +1,71 @@
-$ThisModule = $MyInvocation.MyCommand.Path -replace '\.Tests\.ps1$'
-$ThisModuleName = $ThisModule | Split-Path -Leaf
+$thisModule = $myInvocation.MyCommand.Path -replace '\.Tests\.ps1$'
+$thisModuleName = $thisModule | Split-Path -Leaf
 
-Get-Module -Name $ThisModuleName -All | Remove-Module -Force -ErrorAction Ignore
+Get-Module -Name $thisModuleName -All | Remove-Module -Force -ErrorAction Ignore
 
-Import-Module -Name "$ThisModule.psm1" -Force -ErrorAction Stop
+Import-Module -Name "$thisModule.psm1" -Force -ErrorAction Stop
+
+<#
+    Generic tests
+#>
+Describe 'comment based help' {
+    $allFunctions = Get-Command -Module $thisModuleName
+
+    foreach  ($function in $allFunctions) {
+        # Retrieve the Help of the function
+        $help = Get-Help -Name $function -Full
+
+        $notes = ($help.alertSet.alert.text -split '\n')
+
+        # Parse the function using AST
+        $ast = [System.Management.Automation.Language.Parser]::ParseInput((Get-Content function:$function), [ref]$null, [ref]$null)
+
+        Context "$function"{
+            It 'has Synopsis' {$help.Synopsis | Should not BeNullOrEmpty}
+            It 'has Description' {$help.Description | Should not BeNullOrEmpty}
+            It 'has Github URL in Notes' { $notes[0].trim() | Should BeExactly "https://github.com/lazywinadmin/SpaceX" }
+
+            # Get the parameters declared in the Comment Based Help
+            $helpParameters = $help.parameters.parameter
+
+            # Get the parameters declared in the AST PARAM() Block
+            $astParameters = $ast.ParamBlock.Parameters.Name.variablepath.userpath
+
+            It 'has the correct number of parameters' {
+                $helpParameters.name.count -eq $astParameters.count | Should Be $true
+            }
+
+            # Parameter Description
+            # IF ASTParameters are found
+            If (-not [String]::IsNullOrEmpty($astParameters)) {
+                $helpParameters | ForEach-Object {
+                    It "has a description for parameter $($_.Name)" {
+                        $_.description | Should not BeNullOrEmpty
+                    }
+                }
+            }
+
+            # Examples
+            It 'has Examples' {
+                $help.examples.example.code.count | Should BeGreaterthan 0
+            }
+
+            # Examples - Remarks (small description that comes with the example)
+            $exampleNumber = 0
+            foreach ($example in $help.examples.example)
+            {
+                $exampleNumber ++
+                It "has remarks for Example $exampleNumber" {
+                    (-join $example.remarks.text) | Should not BeNullOrEmpty
+                }
+            }
+        }
+    }
+}
+
+<#
+    Test individual functions
+#>
 
 Describe 'Get-SXApi' {
     Context 'no parameters' {
