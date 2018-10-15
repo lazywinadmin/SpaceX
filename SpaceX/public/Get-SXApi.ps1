@@ -8,10 +8,11 @@ function Get-SXApi
     Retrieve SpaceX API data
     
     .EXAMPLE
-    Get-SXApi
+    C:\PS> Get-SXApi
+    Gets the API data
     
     .NOTES
-    https://github.com/lazywinadmin/spacex
+    https://github.com/lazywinadmin/SpaceX
     #>
 [CmdletBinding()]
 PARAM()
