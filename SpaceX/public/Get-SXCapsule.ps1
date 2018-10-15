@@ -6,14 +6,19 @@ function Get-SXCapsule {
     .DESCRIPTION
     Retrieve SpaceX capsule data
     
+    .PARAMETER Capsule
+    The serial number of a specific capsule
+    
     .EXAMPLE
-    Get-SXCapsule
+    C:\PS> Get-SXCapsule
+    Gets data about all the capsules
 
     .EXAMPLE
-    Get-SXCapsule -Capsule C109
+    C:\PS> Get-SXCapsule -Capsule C109
+    Gets data about the capsule with the specified serial
     
     .NOTES
-    https://github.com/lazywinadmin/spacex
+    https://github.com/lazywinadmin/SpaceX
     #>
     [CmdletBinding()]
     PARAM($Capsule)
