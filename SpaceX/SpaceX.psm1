@@ -17,4 +17,6 @@ Foreach ($import in @($Public + $Private))
 
 # Export all the functions
 Export-ModuleMember -Function $Public.Basename -Alias *
-  
+
+# Set Powershell to use TLS v1.2 (minimum supported by SpaceX API)
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
