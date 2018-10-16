@@ -10,13 +10,15 @@ function Get-SXPayload {
   Specify the Payload ID
   
   .EXAMPLE
-  Get-SXPayload
+  C:\PS> Get-SXPayload
+  Gets data about all the payloads
 
   .EXAMPLE
-  Get-SXPayload -PayloadID "CRS-19"
+  C:\PS> Get-SXPayload -PayloadID "CRS-19"
+  Gets data for the payload with the specified ID
   
   .NOTES
-  https://github.com/lazywinadmin/spacex
+  https://github.com/lazywinadmin/SpaceX
   #>
   [CmdletBinding()]
   PARAM($PayloadID)
