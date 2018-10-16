@@ -8,9 +8,10 @@ function Get-SXRoadster {
 
   .EXAMPLE
   Get-SXRoadster
+  Gets data about the roadster
   
   .NOTES
-  https://github.com/lazywinadmin/spacex
+  https://github.com/lazywinadmin/SpaceX
   #>
   [CmdletBinding()]
   PARAM()

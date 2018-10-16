@@ -8,10 +8,11 @@ function Get-SXCompany
     Retrieve SpaceX Company data
     
     .EXAMPLE
-    Get-SXCompany
+    C:\PS> Get-SXCompany
+    Gets the company data
     
     .NOTES
-    https://github.com/lazywinadmin/spacex
+    https://github.com/lazywinadmin/SpaceX
     #>
 [CmdletBinding()]
 PARAM()

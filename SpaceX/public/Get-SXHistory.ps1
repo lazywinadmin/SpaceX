@@ -10,13 +10,15 @@ function Get-SXHistory {
   Specify the historical event ID
   
   .EXAMPLE
-  Get-SXHistory
+  C:\PS> Get-SXHistory
+  Gets all the history data
 
   .EXAMPLE
-  Get-SXHistory -ID 1
+  C:\PS> Get-SXHistory -ID 1
+  Gets data for the history event with the specified ID
   
   .NOTES
-  https://github.com/lazywinadmin/spacex
+  https://github.com/lazywinadmin/SpaceX
   #>
   [CmdletBinding()]
   PARAM($ID)

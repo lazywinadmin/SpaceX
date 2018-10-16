@@ -10,13 +10,15 @@ function Get-SXShip {
   Specify the ship ID
   
   .EXAMPLE
-  Get-SXShip
+  C:\PS> Get-SXShip
+  Gets data about all ships
 
   .EXAMPLE
-  Get-SXShip -ShipID RACHEL
+  C:\PS> Get-SXShip -ShipID RACHEL
+  Gets data aobut the ship with the specified Ship ID
   
   .NOTES
-  https://github.com/lazywinadmin/spacex
+  https://github.com/lazywinadmin/SpaceX
   #>
   [CmdletBinding()]
   PARAM($ShipID)
