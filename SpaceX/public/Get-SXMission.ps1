@@ -10,13 +10,15 @@ function Get-SXMission {
     Specify the mission ID
     
     .EXAMPLE
-    Get-SXMission
+    C:\PS> Get-SXMission
+    Gets data for all the missions
 
     .EXAMPLE
-    Get-SXMission -Mission F3364BF
+    C:\PS> Get-SXMission -Mission F3364BF
+    Gets data for the mission with the specified Mission ID
     
     .NOTES
-    https://github.com/lazywinadmin/spacex
+    https://github.com/lazywinadmin/SpaceX
     #>
     [CmdletBinding()]
     PARAM($Mission)
