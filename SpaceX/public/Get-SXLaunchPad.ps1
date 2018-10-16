@@ -6,14 +6,19 @@ function Get-SXLaunchpad {
     .DESCRIPTION
     Retrieve SpaceX launch sites data
     
+    .PARAMETER LaunchPad
+    The Site ID of a specific launch pad
+    
     .EXAMPLE
-    Get-SXLaunchpad
+    C:\PS> Get-SXLaunchpad
+    Gets data about all the launch pads
 
     .EXAMPLE
-    Get-SXLaunchpad -Launchpad stls
+    C:\PS> Get-SXLaunchpad -Launchpad stls
+    Gets data for the launch pad with the specified Site ID
     
     .NOTES
-    https://github.com/lazywinadmin/spacex
+    https://github.com/lazywinadmin/SpaceX
     #>
     [CmdletBinding()]
     PARAM($LaunchPad)
