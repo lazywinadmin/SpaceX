@@ -6,17 +6,26 @@ function Get-SXLaunch {
     .DESCRIPTION
     Retrieve SpaceX launch data
     
+    .PARAMETER Latest
+    Just get data for the latest launch
+    
+    .PARAMETER Upcoming
+    Just get data for upcoming launches
+    
     .EXAMPLE
     Get-SXLaunch
+    Gets data for all the launches
 
     .EXAMPLE
     Get-SXLaunch -Latest
+    Gets data for the latest launch
 
     .EXAMPLE
     Get-SXLaunch -Upcoming
+    Gets data for upcoming launches
     
     .NOTES
-    https://github.com/lazywinadmin/spacex
+    https://github.com/lazywinadmin/SpaceX
     #>
     [CmdletBinding()]
     PARAM(
