@@ -27,10 +27,10 @@ function Get-SXLaunch {
     .NOTES
     https://github.com/lazywinadmin/SpaceX
     #>
-    [CmdletBinding()]
+    [CmdletBinding(DefaultParameterSetName='Default')]
     PARAM(
-        [switch]$Latest,
-        [switch]$Upcoming)
+        [Parameter(ParameterSetName='Latest')][switch]$Latest,
+        [Parameter(ParameterSetName='Upcoming')][switch]$Upcoming)
     try {
         if ($Latest) {
             $Splat = @{
