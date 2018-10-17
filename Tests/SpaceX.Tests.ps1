@@ -264,8 +264,6 @@ Describe 'Get-SXLaunch' {
     }
     
     Context 'specify both Latest and Upcoming' {
-        $returnedData = Get-SXLaunch -Latest
-        
         It 'is disallowed' {
             {Get-SXLaunch -Latest -Upcoming} | Should -Throw
         }
