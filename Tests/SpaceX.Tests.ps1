@@ -60,7 +60,16 @@ Describe "$ModuleName Module - Testing Manifest File (.psd1)"{
             if (-not ($ExportedFunctions.count -eq $PS1Functions.count))
             {
                 $Compare = Compare-Object -ReferenceObject $ExportedFunctions -DifferenceObject $PS1Functions.basename
-                $Compare.inputobject -join ',' | Should BeNullOrEmpty
+                it "Count1"{
+                    $Compare.inputobject -join ',' | Should BeNullOrEmpty
+                }
+                it "Count2"{
+                    $ExportedFunctions.count | Should Be $PS1Functions.count
+                }
+                it "Count3"{
+                    $PS1Functions.count | Should Be $ExportedFunctions.count
+                }
+
             }
         }
     }
@@ -72,7 +81,6 @@ Describe "$ModuleName Module - Functions Comment based help" {
     foreach  ($function in $ExportedFunctions) {
         # Retrieve the Help of the function
         $Help = Get-Help -Name $Function -Full
-        $Notes = ($Help.alertSet.alert.text -split '\n')
 
         # Parse the function using AST
         $AST = [System.Management.Automation.Language.Parser]::ParseInput((Get-Content function:$Function), [ref]$null, [ref]$null)
