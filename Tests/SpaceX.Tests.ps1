@@ -56,22 +56,26 @@ Describe "$ModuleName Module - Testing Manifest File (.psd1)"{
             $ExportedFunctions.count -eq $PS1Functions.count |
             Should BeGreaterthan 0
         }
+
+        $Compare = Compare-Object -ReferenceObject $ExportedFunctions -DifferenceObject $PS1Functions.basename
+        <#
         It "Compare the missing function"{
             if (-not ($ExportedFunctions.count -eq $PS1Functions.count))
             {
                 $Compare = Compare-Object -ReferenceObject $ExportedFunctions -DifferenceObject $PS1Functions.basename
-                it "Count1"{
-                    $Compare.inputobject -join ',' | Should BeNullOrEmpty
-                }
-                it "Count2"{
-                    $ExportedFunctions.count | Should Be $PS1Functions.count
-                }
-                it "Count3"{
-                    $PS1Functions.count | Should Be $ExportedFunctions.count
-                }
-
             }
         }
+        #>
+        it "Count1"{
+            $Compare.inputobject -join ',' | Should BeNullOrEmpty
+        }
+        it "Count2"{
+            $ExportedFunctions.count | Should Be $PS1Functions.count
+        }
+        it "Count3"{
+            $PS1Functions.count | Should Be $ExportedFunctions.count
+        }
+
     }
 }
 <#
