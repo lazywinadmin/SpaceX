@@ -1,3 +1,5 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/dq8rbeo5p80s598x?svg=true)](https://ci.appveyor.com/project/lazywinadmin/spacex)
+
 # SpaceX
 
 PowerShell module to interact with [api.spacexdata.com](https://github.com/r-spacex/SpaceX-API/wiki) (unofficial)
