@@ -1,84 +1,141 @@
-$thisModule = $myInvocation.MyCommand.Path -replace '\.Tests\.ps1$'
-$thisModuleName = $thisModule | Split-Path -Leaf
+# Retrieve current path
+$Module = Resolve-Path -Path ..\ #$myInvocation.MyCommand.Path -replace '\.Tests\.ps1$'
+$ModuleName = $Module | Split-Path -Leaf
 
-Get-Module -Name $thisModuleName -All | Remove-Module -Force -ErrorAction Ignore
+# Find the Manifest file
+$ManifestFile = "$Module\$ModuleName\$ModuleName.psd1"
 
-Import-Module -Name "$thisModule.psm1" -Force -ErrorAction Stop
+# Unload any module with same name
+Get-Module -Name $ModuleName -All | Remove-Module -Force -ErrorAction Ignore
 
+# Import Module
+$ModuleInformation = Import-Module -Name $ManifestFile -Force -ErrorAction Stop -PassThru
+
+# Get the functions present in the Manifest
+$ExportedFunctions = $ModuleInformation.ExportedFunctions.Values.name
+"Exported function = $ExportedFunctions"
+# Get the functions present in the Public folder
+$PS1Functions = Get-ChildItem -path  "$Module\$ModuleName\public\*.ps1"
+"PS1 function = $($PS1Functions.basename)"
+
+Compare-Object -ReferenceObject $ExportedFunctions -DifferenceObject $PS1Functions.basename -PassThru
+
+
+Describe "$ModuleName Module - Testing Manifest File (.psd1)"{
+    Context "Manifest"{
+        It "Should contains RootModule"{
+            $ModuleInformation.RootModule | Should not BeNullOrEmpty
+        }
+        It "Should contains Author"{
+            $ModuleInformation.Author | Should not BeNullOrEmpty
+        }
+        It "Should contains Company Name"{
+            $ModuleInformation.CompanyName | Should not BeNullOrEmpty
+        }
+        It "Should contains Description"{
+            $ModuleInformation.Description | Should not BeNullOrEmpty
+        }
+        It "Should contains Copyright"{
+            $ModuleInformation.Copyright | Should not BeNullOrEmpty
+        }
+        It "Should contains License"{
+            $ModuleInformation.LicenseURI | Should not BeNullOrEmpty
+        }
+        It "Should contains a Project Link"{
+            $ModuleInformation.ProjectURI | Should not BeNullOrEmpty
+        }
+        It "Should contains a Tags (For the PSGallery)"{
+            $ModuleInformation.Tags.count | Should not BeNullOrEmpty
+        }
+
+        It "Compare the count of Function Exported and the PS1 files found"{
+            $ExportedFunctions.count -eq $PS1Functions.count |
+            Should BeGreaterthan 0
+        }
+        It "Compare the missing function"{
+            if (-not ($ExportedFunctions.count -eq $PS1Functions.count))
+            {
+                $Compare = Compare-Object -ReferenceObject $ExportedFunctions -DifferenceObject $PS1Functions.basename
+                $Compare.inputobject -join ',' | Should BeNullOrEmpty
+            }
+        }
+    }
+}
 <#
     Generic tests
 #>
-Describe 'comment based help' {
-    $allFunctions = Get-Command -Module $thisModuleName
-
-    foreach  ($function in $allFunctions) {
+Describe "$ModuleName Module - Functions Comment based help" {
+    foreach  ($function in $ExportedFunctions) {
         # Retrieve the Help of the function
-        $help = Get-Help -Name $function -Full
-
-        $notes = ($help.alertSet.alert.text -split '\n')
+        $Help = Get-Help -Name $Function -Full
+        $Notes = ($Help.alertSet.alert.text -split '\n')
 
         # Parse the function using AST
-        $ast = [System.Management.Automation.Language.Parser]::ParseInput((Get-Content function:$function), [ref]$null, [ref]$null)
+        $AST = [System.Management.Automation.Language.Parser]::ParseInput((Get-Content function:$Function), [ref]$null, [ref]$null)
 
-        Context "$function"{
-            It 'has Synopsis' {$help.Synopsis | Should -Not -BeNullOrEmpty}
-            It 'has Description' {$help.Description | Should -Not -BeNullOrEmpty}
-            It 'has Github URL in Notes' { $notes[0].trim() | Should -BeExactly "https://github.com/lazywinadmin/SpaceX" }
+        Context "$Function - Help"{
+
+            It "Synopsis"{ $help.Synopsis | Should not BeNullOrEmpty }
+            It "Description"{ $help.Description | Should not BeNullOrEmpty }
 
             # Get the parameters declared in the Comment Based Help
-            $helpParameters = $help.parameters.parameter
+            $RiskMitigationParameters = 'Whatif', 'Confirm'
+            $HelpParameters = $help.parameters.parameter | Where-Object name -NotIn $RiskMitigationParameters
 
             # Get the parameters declared in the AST PARAM() Block
-            $astParameters = $ast.ParamBlock.Parameters.Name.variablepath.userpath
+            $ASTParameters = $ast.ParamBlock.Parameters.Name.variablepath.userpath
 
-            It 'has the correct number of parameters' {
-                $helpParameters.name.count -eq $astParameters.count | Should -BeTrue
+            It "Parameter - Compare Count Help/AST" {
+                $HelpParameters.name.count -eq $ASTParameters.count | Should Be $true
             }
 
             # Parameter Description
-            # IF ASTParameters are found
-            If (-not [String]::IsNullOrEmpty($astParameters)) {
-                $helpParameters | ForEach-Object {
-                    It "has a description for parameter $($_.Name)" {
-                        $_.description | Should -Not -BeNullOrEmpty
+            If (-not [String]::IsNullOrEmpty($ASTParameters)) # IF ASTParameters are found
+            {
+                $HelpParameters | ForEach-Object {
+                    It "Parameter $($_.Name) - Should contains description"{
+                        $_.description | Should not BeNullOrEmpty
                     }
                 }
             }
 
             # Examples
-            It 'has Examples' {
-                $help.examples.example.code.count | Should -BeGreaterThan 0
+            it "Example - Count should be greater than 0"{
+                $Help.examples.example.code.count | Should BeGreaterthan 0
             }
-            write-host $help.examples.example.code
 
             # Examples - Remarks (small description that comes with the example)
-            $exampleNumber = 0
-            foreach ($example in $help.examples.example)
+            foreach ($Example in $Help.examples.example)
             {
-                $exampleNumber ++
-                It "has remarks for Example $exampleNumber" {
-                    (-join $example.remarks.text) | Should -Not -BeNullOrEmpty
+                it "Example - Remarks on $($Example.Title)"{
+                    $Example.remarks | Should not BeNullOrEmpty
                 }
             }
-        }
+        }        
     }
 }
 
+
+
+
+
+
+
 <#
     Test individual functions
-#>
 
 Describe 'Get-SXApi' {
     Context 'no parameters' {
         $returnedData = Get-SXApi
-        
+
+        It 'gets result' {
+            $returnedData|Should not BeNullOrEmpty
+        }
         It 'gets a single object' {
             $returnedData.getType() | Should -Be 'System.Management.Automation.PSCustomObject'
         }
     }
 }
-
-
 Describe 'Get-SXCapsule' {
     Context 'no parameters' {
         $returnedData = Get-SXCapsule
@@ -96,7 +153,6 @@ Describe 'Get-SXCapsule' {
         }
     }
 }
-
 
 Describe 'Get-SXCompany' {
     Context 'no parameters' {
@@ -297,3 +353,4 @@ Describe 'Get-SXShip' {
         }
     }
 }
+#>
