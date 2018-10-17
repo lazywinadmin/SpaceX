@@ -65,7 +65,7 @@ Describe "$ModuleName Module - Testing Manifest File (.psd1)"{
                 $Compare = Compare-Object -ReferenceObject $ExportedFunctions -DifferenceObject $PS1Functions.basename
             }
         }
-        #>
+        
         it "Count1"{
             $Compare.inputobject -join ',' | Should BeNullOrEmpty
         }
@@ -75,7 +75,7 @@ Describe "$ModuleName Module - Testing Manifest File (.psd1)"{
         it "Count3"{
             $PS1Functions.count | Should Be $ExportedFunctions.count
         }
-
+        #>
     }
 }
 <#
