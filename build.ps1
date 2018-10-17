@@ -1,7 +1,7 @@
 #---------------------------------# 
 # Header                          # 
 #---------------------------------# 
-Write-Output -InputObject 'Running AppVeyor build script' -ForegroundColor Yellow
+Write-Output -InputObject 'Running AppVeyor build script'
 Write-Output -InputObject "ModuleName    : $env:ModuleName"
 Write-Output -InputObject "Build version : $env:APPVEYOR_BUILD_VERSION"
 Write-Output -InputObject "Author        : $env:APPVEYOR_REPO_COMMIT_AUTHOR"
