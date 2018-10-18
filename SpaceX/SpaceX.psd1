@@ -69,7 +69,7 @@ PowerShellVersion = '3.0'
 # NestedModules = @()
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = 'Get-SXCapsule','Get-SXCompany','Get-SXLaunch','Get-SXLaunchPad','Get-SXRocket','Get-SXApi','Get-SXMission'
+FunctionsToExport = 'Get-SXApi','Get-SXCapsule','Get-SXCompany','Get-SXCore','Get-SXDragon','Get-SXHistory','Get-SXLaunch','Get-SXLaunchPad','Get-SXMission','Get-SXPayload','Get-SXRoadster','Get-SXRocket','Get-SXShip'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 # CmdletsToExport = '*'
