@@ -262,6 +262,12 @@ Describe 'Get-SXLaunch' {
             $returnedData.getType() | Should -Be 'System.Object[]'
         }
     }
+    
+    Context 'specify both Latest and Upcoming' {
+        It 'is disallowed' {
+            {Get-SXLaunch -Latest -Upcoming} | Should -Throw
+        }
+    }
 }
 
 
