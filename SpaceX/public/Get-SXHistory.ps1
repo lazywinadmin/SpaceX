@@ -26,16 +26,16 @@ function Get-SXHistory {
       if($ID)
       {
           $Splat = @{
-              Uri = "https://api.spacexdata.com/v3/history/$ID"
+              Path = "history/$ID"
           }
       }
       else{
           $Splat = @{
-              Uri = "https://api.spacexdata.com/v3/history"
+              Path = "history"
           }
       }
 
-      (Invoke-RestMethod @Splat)
+      (Get-SXData @Splat)
   }
   catch{
       $PSCmdlet.ThrowTerminatingError($_)
