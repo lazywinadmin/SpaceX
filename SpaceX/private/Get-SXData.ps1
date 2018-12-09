@@ -31,7 +31,6 @@ PARAM($Path)
     
     Try {
         Invoke-RestMethod -Uri https://api.spacexdata.com/v3/$Path
-        $a = 1/0
     }
     
     Finally {
