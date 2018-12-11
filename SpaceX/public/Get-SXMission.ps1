@@ -26,16 +26,16 @@ function Get-SXMission {
         if($Mission)
         {
             $Splat = @{
-                Uri = "https://api.spacexdata.com/v3/missions/$Mission"
+                Path = "missions/$Mission"
             }
         }
         else{
             $Splat = @{
-                Uri = "https://api.spacexdata.com/v3/missions"
+                Path = "missions"
             }
         }
 
-        (Invoke-RestMethod @Splat)
+        (Get-SXData @Splat)
     }
     catch{
         $PSCmdlet.ThrowTerminatingError($_)
