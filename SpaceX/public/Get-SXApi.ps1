@@ -16,5 +16,5 @@ function Get-SXApi
     #>
 [CmdletBinding()]
 PARAM()
-    Invoke-RestMethod -Uri https://api.spacexdata.com/v3
+    Get-SXData
 }

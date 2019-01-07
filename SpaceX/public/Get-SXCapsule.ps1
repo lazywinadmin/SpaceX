@@ -25,16 +25,15 @@ function Get-SXCapsule {
     try {
         if ($Capsule) {
             $Splat = @{
-                Uri = "https://api.spacexdata.com/v3/capsules/$Capsule"
+                Path = "capsules/$Capsule"
             }
         }
         else {
             $Splat = @{
-                Uri = "https://api.spacexdata.com/v3/capsules"
+                Path = "capsules"
             }
         }
-
-        (Invoke-RestMethod @Splat)
+        (Get-SXData @Splat)
     }
     catch {
         $PSCmdlet.ThrowTerminatingError($_)

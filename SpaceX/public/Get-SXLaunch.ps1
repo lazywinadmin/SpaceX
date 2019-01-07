@@ -34,22 +34,22 @@ function Get-SXLaunch {
     try {
         if ($Latest) {
             $Splat = @{
-                Uri = "https://api.spacexdata.com/v3/launches/latest"
+                Path = "launches/latest"
             }
         }
         elseif ($Upcoming) {
             $Splat = @{
-                Uri = "https://api.spacexdata.com/v3/launches/upcoming"
+                Path = "launches/upcoming"
             }
         }
 
         else {
             $Splat = @{
-                Uri = "https://api.spacexdata.com/v3/launches"
+                Path = "launches"
             }
         }
 
-        (Invoke-RestMethod @Splat)
+        (Get-SXData @Splat)
     }
     catch {
         $PSCmdlet.ThrowTerminatingError($_)
