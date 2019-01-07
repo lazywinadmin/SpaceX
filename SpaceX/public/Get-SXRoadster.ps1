@@ -17,9 +17,9 @@ function Get-SXRoadster {
   PARAM()
   try{
       $Splat = @{
-          Uri = "https://api.spacexdata.com/v3/roadster"
+          Path = "roadster"
       }
-      (Invoke-RestMethod @Splat)
+      (Get-SXData @Splat)
   }
   catch{
       $PSCmdlet.ThrowTerminatingError($_)

@@ -26,16 +26,16 @@ function Get-SXCore {
       if($Serial)
       {
           $Splat = @{
-              Uri = "https://api.spacexdata.com/v3/cores/$Serial"
+              Path = "cores/$Serial"
           }
       }
       else{
           $Splat = @{
-              Uri = "https://api.spacexdata.com/v3/cores"
+              Path = "cores"
           }
       }
 
-      (Invoke-RestMethod @Splat)
+      (Get-SXData @Splat)
   }
   catch{
       $PSCmdlet.ThrowTerminatingError($_)

@@ -25,16 +25,16 @@ function Get-SXLaunchpad {
     try {
         if ($LaunchPad) {
             $Splat = @{
-                Uri = "https://api.spacexdata.com/v3/launchpads/$LaunchPad"
+                Path = "launchpads/$LaunchPad"
             }
         }
         else {
             $Splat = @{
-                Uri = "https://api.spacexdata.com/v3/launchpads"
+                Path = "launchpads"
             }
         }
 
-        (Invoke-RestMethod @Splat)
+        (Get-SXData @Splat)
     }
     catch {
         $PSCmdlet.ThrowTerminatingError($_)

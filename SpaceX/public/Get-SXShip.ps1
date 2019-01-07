@@ -26,16 +26,16 @@ function Get-SXShip {
       if($ShipID)
       {
           $Splat = @{
-              Uri = "https://api.spacexdata.com/v3/ships/$ShipID"
+              Path = "ships/$ShipID"
           }
       }
       else{
           $Splat = @{
-              Uri = "https://api.spacexdata.com/v3/ships"
+              Path = "ships"
           }
       }
 
-      (Invoke-RestMethod @Splat)
+      (Get-SXData @Splat)
   }
   catch{
       $PSCmdlet.ThrowTerminatingError($_)

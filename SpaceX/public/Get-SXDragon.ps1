@@ -26,16 +26,16 @@ function Get-SXDragon {
       if($ID)
       {
           $Splat = @{
-              Uri = "https://api.spacexdata.com/v3/dragons/$ID"
+              Path = "dragons/$ID"
           }
       }
       else{
           $Splat = @{
-              Uri = "https://api.spacexdata.com/v3/dragons"
+              Path = "dragons"
           }
       }
 
-      (Invoke-RestMethod @Splat)
+      (Get-SXData @Splat)
   }
   catch{
       $PSCmdlet.ThrowTerminatingError($_)

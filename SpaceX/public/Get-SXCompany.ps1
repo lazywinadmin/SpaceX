@@ -16,5 +16,5 @@ function Get-SXCompany
     #>
 [CmdletBinding()]
 PARAM()
-    Invoke-RestMethod -Uri https://api.spacexdata.com/v3/info
+    Get-SXData -Path info
 }
