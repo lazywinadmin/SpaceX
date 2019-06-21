@@ -7,7 +7,7 @@ $Module = Split-path -Path (Split-Path -Parent -Path $MyInvocation.MyCommand.Def
 "Module $module"
 $ModuleName = Split-path -Path $Module -Leaf
 "ModuleName $modulename"
-$ManifestFile = "$(Split-path (Split-Path -Parent -Path $MyInvocation.MyCommand.Definition))\$ModuleName\$ModuleName.psd1"
+$ManifestFile = "$(Split-path (Split-Path -Parent -Path $MyInvocation.MyCommand.Definition))\output\$ModuleName\$ModuleName.psd1"
 "Manifest $ManifestFile "
 # Unload any module with same name
 Get-Module -Name $ModuleName -All | Remove-Module -Force -ErrorAction Ignore
@@ -19,10 +19,11 @@ $ModuleInformation = Import-Module -Name $ManifestFile -Force -ErrorAction Stop 
 $ExportedFunctions = $ModuleInformation.ExportedFunctions.Values.name
 #"Exported function = $ExportedFunctions"
 # Get the functions present in the Public folder
-$PS1Functions = Get-ChildItem -path  "$Module\$ModuleName\public\*.ps1"
+#$PS1Functions = #Get-ChildItem -path  "$Module\output\$ModuleName\public\*.ps1"
+$PS1Functions = Get-Command -module $Module
 #"PS1 function = $($PS1Functions.basename)"
 
-Compare-Object -ReferenceObject $ExportedFunctions -DifferenceObject $PS1Functions.basename -PassThru
+#Compare-Object -ReferenceObject $ExportedFunctions -DifferenceObject $PS1Functions.basename -PassThru
 
 
 Describe "$ModuleName Module - Testing Manifest File (.psd1)"{
