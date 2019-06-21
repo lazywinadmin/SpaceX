@@ -75,5 +75,6 @@ task -Name deploy {
 
 task -Name test {
     # Run test build
-    Invoke-Pester -Path $TestPath -OutputFormat NUnitXml -OutputFile "$buildOutputPath\$testResult" -PassThru
+    #Invoke-Pester -Path $TestPath -OutputFormat NUnitXml -OutputFile "$buildOutputPath\$testResult" -PassThru
+    Invoke-Pester -Script @{ Path =  $TestPath; Parameters = @{moduleName = $moduleName; modulePath = $modulePath} } -OutputFormat NUnitXml -OutputFile "$buildOutputPath\$testResult" -PassThru
 }

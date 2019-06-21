@@ -1,14 +1,16 @@
+PARAM($modulePath,$moduleName)
+
 # Retrieve current path
 #$Module = Resolve-Path -Path ..\ #$myInvocation.MyCommand.Path -replace '\.Tests\.ps1$'
 #$ModuleName = $Module | Split-Path -Leaf
 
 # Find the Manifest file
-$Module = Split-path -Path (Split-Path -Parent -Path $MyInvocation.MyCommand.Definition)
-"Module $module"
-$ModuleName = Split-path -Path $Module -Leaf
-"ModuleName $modulename"
-$ManifestFile = "$(Split-path (Split-Path -Parent -Path $MyInvocation.MyCommand.Definition))\output\$ModuleName\$ModuleName.psd1"
-"Manifest $ManifestFile "
+#$Module = Split-path -Path (Split-Path -Parent -Path $MyInvocation.MyCommand.Definition)
+#"Module $module"
+#$ModuleName = Split-path -Path $Module -Leaf
+#"ModuleName $modulename"
+$ManifestFile = "$modulePath\$ModuleName.psd1"
+
 # Unload any module with same name
 Get-Module -Name $ModuleName -All | Remove-Module -Force -ErrorAction Ignore
 
@@ -20,7 +22,7 @@ $ExportedFunctions = $ModuleInformation.ExportedFunctions.Values.name
 #"Exported function = $ExportedFunctions"
 # Get the functions present in the Public folder
 #$PS1Functions = #Get-ChildItem -path  "$Module\output\$ModuleName\public\*.ps1"
-$PS1Functions = Get-Command -module $Module
+#$PS1Functions = Get-Command -module $Module
 #"PS1 function = $($PS1Functions.basename)"
 
 #Compare-Object -ReferenceObject $ExportedFunctions -DifferenceObject $PS1Functions.basename -PassThru
