@@ -8,5 +8,6 @@
     "files.defaultLanguage": "powershell",
     "[json]": {
       "editor.tabSize": 2
-    }
+    },
+    "files.trimTrailingWhitespace": true
 }

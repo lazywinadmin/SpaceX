@@ -190,7 +190,9 @@ static_fire_date_unix   : 1538514000
 ```
 
 ### Launch sites data
+
 #### All Launch Sites
+
 ```powershell
 Get-SXLaunchpad
 ```
@@ -229,7 +231,9 @@ site_name_long    : Cape Canaveral Air Force Station Space Launch Complex 13
 ```
 
 #### Specific Launch Site
+
 ```powershell
+
 Get-SXLaunchpad -Launchpad stls
 ```
 
@@ -246,7 +250,9 @@ site_name_long    : SpaceX South Texas Launch Site
 ```
 
 ### Capsules data
+
 #### All Capsules
+
 ```powershell
 Get-SXCapsule
 ```
@@ -287,6 +293,7 @@ reuse_count          : 0
 ```
 
 #### Specific Capsule
+
 ```powershell
 Get-SXCapsule -Capsule C109
 ```
@@ -586,7 +593,7 @@ Get-SXShip
 ```text
 ship_id             : AMERICANCHAMPION
 ship_name           : American Champion
-ship_model          : 
+ship_model          :
 ship_type           : Tug
 roles               : {Support Ship, Barge Tug}
 active              : False
@@ -600,61 +607,61 @@ year_built          : 1976
 home_port           : Port of Los Angeles
 status              : Stopped
 speed_kn            : 0
-course_deg          : 
+course_deg          :
 position            : @{latitude=30.52757; longitude=-88.10252}
-successful_landings : 
-attempted_landings  : 
+successful_landings :
+attempted_landings  :
 missions            : {@{name=COTS 1; flight=7}, @{name=COTS 2; flight=8}}
 url                 : https://www.marinetraffic.com/en/ais/details/ships/shipid:434663/vessel:AMERICAN%20CHAMPION
 image               : https://i.imgur.com/woCxpkj.jpg
 
 ship_id             : AMERICANISLANDER
 ship_name           : American Islander
-ship_model          : 
+ship_model          :
 ship_type           : Cargo
 roles               : {Dragon Recovery}
 active              : False
-imo                 : 
+imo                 :
 mmsi                : 367035570
-abs                 : 
-class               : 
-weight_lbs          : 
-weight_kg           : 
-year_built          : 
+abs                 :
+class               :
+weight_lbs          :
+weight_kg           :
+year_built          :
 home_port           : Port of Los Angeles
 status              : Stopped
 speed_kn            : 0
-course_deg          : 
+course_deg          :
 position            : @{latitude=33.73421; longitude=-118.2635}
-successful_landings : 
-attempted_landings  : 
+successful_landings :
+attempted_landings  :
 missions            : {@{name=CRS-1; flight=9}, @{name=CRS-2; flight=10}, @{name=CRS-3; flight=14}, @{name=CRS-4; flight=18}}
 url                 : https://www.marinetraffic.com/en/ais/details/ships/shipid:435112/vessel:AMERICAN%20ISLANDER
 image               : https://i.imgur.com/jmj8Sh2.jpg
 
 ship_id             : AMERICANSPIRIT
 ship_name           : American Spirit
-ship_model          : 
+ship_model          :
 ship_type           : Cargo
 roles               : {Support Ship}
 active              : False
-imo                 : 
-mmsi                : 
-abs                 : 
-class               : 
-weight_lbs          : 
-weight_kg           : 
-year_built          : 
+imo                 :
+mmsi                :
+abs                 :
+class               :
+weight_lbs          :
+weight_kg           :
+year_built          :
 home_port           : Port of Los Angeles
-status              : 
-speed_kn            : 
-course_deg          : 
+status              :
+speed_kn            :
+course_deg          :
 position            : @{latitude=; longitude=}
-successful_landings : 
-attempted_landings  : 
+successful_landings :
+attempted_landings  :
 missions            : {@{name=CASSIOPE; flight=11}}
-url                 : 
-image               : 
+url                 :
+image               :
 ```
 
 #### Specific ship
@@ -666,7 +673,7 @@ Get-SXShip -ShipID RACHEL
 ```text
 ship_id             : RACHEL
 ship_name           : RACHEL
-ship_model          : 
+ship_model          :
 ship_type           : Tug
 roles               : {ASDS Tug}
 active              : False
@@ -682,8 +689,8 @@ status              : Underway Using Engine
 speed_kn            : 5.7
 course_deg          : 256
 position            : @{latitude=29.55419; longitude=-90.91056}
-successful_landings : 
-attempted_landings  : 
+successful_landings :
+attempted_landings  :
 missions            : {@{name=Bangabandhu-1; flight=61}}
 url                 : https://www.marinetraffic.com/en/ais/details/ships/shipid:447352/vessel:RACHEL
 image               : https://i.imgur.com/IpYJWUW.jpg
@@ -751,8 +758,8 @@ customers        : {DARPA}
 nationality      : United States
 manufacturer     : SpaceX
 payload_type     : Satellite
-payload_mass_kg  : 
-payload_mass_lbs : 
+payload_mass_kg  :
+payload_mass_lbs :
 orbit            : LEO
 orbit_params     : @{reference_system=geocentric; regime=low-earth; longitude=; semi_major_axis_km=; eccentricity=; periapsis_km=; apoapsis_km=; inclination_deg=; period_min=; lifespan_years=; epoch=; mean_motion=; raan=; arg_of_pericenter=; mean_anomaly=}
 
@@ -763,8 +770,8 @@ customers        : {NASA}
 nationality      : United States
 manufacturer     : Space Dev
 payload_type     : Satellite
-payload_mass_kg  : 
-payload_mass_lbs : 
+payload_mass_kg  :
+payload_mass_lbs :
 orbit            : LEO
 orbit_params     : @{reference_system=geocentric; regime=low-earth; longitude=; semi_major_axis_km=; eccentricity=; periapsis_km=; apoapsis_km=; inclination_deg=; period_min=; lifespan_years=; epoch=; mean_motion=; raan=; arg_of_pericenter=; mean_anomaly=}
 ```
@@ -778,20 +785,20 @@ Get-SXPayload -PayloadID "CRS-19"
 ```text
 payload_id        : CRS-19
 norad_id          : {}
-cap_serial        : 
+cap_serial        :
 reused            : True
 customers         : {NASA (CRS)}
 nationality       : United States
 manufacturer      : SpaceX
 payload_type      : Dragon 1.1
-payload_mass_kg   : 
-payload_mass_lbs  : 
+payload_mass_kg   :
+payload_mass_lbs  :
 orbit             : ISS
 orbit_params      : @{reference_system=geocentric; regime=low-earth; longitude=; semi_major_axis_km=; eccentricity=; periapsis_km=; apoapsis_km=; inclination_deg=; period_min=; lifespan_years=; epoch=; mean_motion=; raan=; arg_of_pericenter=; mean_anomaly=}
-mass_returned_kg  : 
-mass_returned_lbs : 
-flight_time_sec   : 
-cargo_manifest    : 
+mass_returned_kg  :
+mass_returned_lbs :
+flight_time_sec   :
+cargo_manifest    :
 ```
 
 ### Dragon capsule data
@@ -896,8 +903,8 @@ Get-SXCore
 core_serial          : B1052
 block                : 5
 status               : active
-original_launch      : 
-original_launch_unix : 
+original_launch      :
+original_launch_unix :
 missions             : {}
 reuse_count          : 0
 rtls_attempts        : 0
@@ -910,8 +917,8 @@ details              : On test stand at McGregor.
 core_serial          : B1053
 block                : 5
 status               : active
-original_launch      : 
-original_launch_unix : 
+original_launch      :
+original_launch_unix :
 missions             : {}
 reuse_count          : 0
 rtls_attempts        : 0
@@ -922,7 +929,7 @@ water_landing        : False
 details              : Testing at McGregor.
 
 core_serial          : Merlin1A
-block                : 
+block                :
 status               : expended
 original_launch      : 3/24/06 10:30:00 PM
 original_launch_unix : 1143239400
@@ -979,7 +986,7 @@ id              : 2
 title           : SpaceX Wins $1.6B CRS Contract
 event_date_utc  : 12/23/08 1:00:00 AM
 event_date_unix : 1229994000
-flight_number   : 
+flight_number   :
 details         : NASA awards SpaceX $1.6B Commercial Resupply Services (CRS) contract.
 links           : @{reddit=; article=https://www.nasaspaceflight.com/2008/12/spacex-and-orbital-win-huge-crs-contract-from-nasa/; wikipedia=https://en.wikipedia.org/wiki/Commercial_Resupply_Services}
 
