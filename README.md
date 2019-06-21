@@ -2,7 +2,7 @@
 
 # SpaceX
 
-PowerShell module to interact with [api.spacexdata.com](https://github.com/r-spacex/SpaceX-API/wiki) (unofficial)
+PowerShell module to get SpaceX rockets, missions, payloads,... by interacting with the [api.spacexdata.com](https://github.com/r-spacex/SpaceX-API/wiki) Rest API. Not that this Rest API is unofficial and not supported by SpaceX.
 
 ![alt text](/media/last-starman.jpg 'Starman')
 
