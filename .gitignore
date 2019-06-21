@@ -1,0 +1,4 @@
+# ignore folder output
+output/
+dependencies/
+archive/

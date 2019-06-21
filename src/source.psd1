@@ -9,10 +9,10 @@
 @{
 
 # Script module or binary module file associated with this manifest.
-RootModule = 'SpaceX.psm1'
+RootModule = ''
 
 # Version number of this module.
-ModuleVersion = '1.0.0.2'
+ModuleVersion = '0.0'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -27,10 +27,10 @@ Author = 'Francois-Xavier Cat'
 CompanyName = 'Lazywinadmin.com'
 
 # Copyright statement for this module
-Copyright = '(c) 2018 Francois-Xavier Cat. All rights reserved. Licensed under The MIT License (MIT)'
+Copyright = 'Some Copyright'
 
 # Description of the functionality provided by this module
-Description = 'SpaceX is a module wrapped around the spacex API (github.com/r-spacex/SpaceX-API)'
+Description = 'Some description'
 
 # Minimum version of the Windows PowerShell engine required by this module
 PowerShellVersion = '3.0'
@@ -69,7 +69,7 @@ PowerShellVersion = '3.0'
 # NestedModules = @()
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = 'Get-SXApi','Get-SXCapsule','Get-SXCompany','Get-SXCore','Get-SXDragon','Get-SXHistory','Get-SXLaunch','Get-SXLaunchPad','Get-SXMission','Get-SXPayload','Get-SXRoadster','Get-SXRocket','Get-SXShip'
+FunctionsToExport = '*'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 # CmdletsToExport = '*'
@@ -95,13 +95,13 @@ PrivateData = @{
     PSData = @{
 
         # Tags applied to this module. These help with module discovery in online galleries.
-        Tags = 'SpaceX', 'Falcon', 'Space', 'Rocket', 'ElonMusk'
+        # Tags = @()
 
         # A URL to the license for this module.
-        LicenseUri = 'https://github.com/lazywinadmin/SpaceX/blob/master/LICENSE.md'
+        # LicenseUri = ''
 
         # A URL to the main website for this project.
-        ProjectUri = 'https://github.com/lazywinadmin/SpaceX/'
+        # ProjectUri = ''
 
         # A URL to an icon representing this module.
         # IconUri = ''

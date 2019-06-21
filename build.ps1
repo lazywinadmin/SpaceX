@@ -1,39 +1,112 @@
-#---------------------------------# 
-# Header                          # 
-#---------------------------------# 
-Write-Output -InputObject 'Running AppVeyor build script'
-Write-Output -InputObject "ModuleName    : $env:ModuleName"
-Write-Output -InputObject "Build version : $env:APPVEYOR_BUILD_VERSION"
-Write-Output -InputObject "Author        : $env:APPVEYOR_REPO_COMMIT_AUTHOR"
-Write-Output -InputObject "Branch        : $env:APPVEYOR_REPO_BRANCH"
-write-output -InputObject "Build Folder  : $env:APPVEYOR_BUILD_FOLDER"
-write-output -InputObject "Project Name  : $env:APPVEYOR_PROJECT_NAME"
+<#
+.SYNOPSIS
+Used to start the build of a PowerShell Module
+.DESCRIPTION
+This script will install dependencies using PSDepend module and start the build tasks using InvokeBuild module
+.NOTES
+Change History
+-1.0 | 2019/06/17 | Francois-Xavier Cat
+    Initial version
+TODO
+-Check if we can fetch the information in the "Edit" part with BuildHelpers (see below)
+-Conditional deploy "task deploy -if ($BHCommitMessage -match '!deploy')"
+-publish release to github
+-Make this file appraoch easily clonable
+-Improve agnostic approach so it can work on any CI
+-Minimalize files present in the root, possibly move build.ps1 ?
+-Make the Build script flexible so we can call different tasks at different stages (build, deploy, tests..)
+-Speed up dependencies installation
+-Add more verbose/output messages
+-Use invokebuild header ?
+#>
+[CmdletBinding()]
+Param(
+    #[string[]]$tasks,
+    [string]$GalleryRepository,
+    [pscredential]$GalleryCredential,
+    [string]$GalleryProxy,
+    [string[]]$tasks, # @('build','test','deploy')
+    [switch]$InstallDependencies
+    )
+try{
+    ################
+    # EDIT THIS PART
+    $moduleName = "SpaceX" # get from source control or module ?
+    $author = 'Francois-Xavier Cat' # fetch from source or module
+    $description = 'SpaceX is a module wrapped around the spacex API (github.com/r-spacex/SpaceX-API)' # fetch from module ?
+    $companyName = 'lazywinadmin.com' # fetch from module ?
+    $projectUri = "https://github.com/lazywinadmin/$moduleName" # get from module of from source control, env var
+    $licenseUri = "https://github.com/lazywinadmin/$moduleName/blob/master/LICENSE.md"
+    $tags = @('SpaceX', 'Falcon', 'Space', 'Rocket', 'ElonMusk')
+    ################
 
+    #$rootpath = Split-Path -path $PSScriptRoot -parent
+    $rootpath = $PSScriptRoot
+    $buildOutputPath = "$rootpath\output"
+    $buildPath = "$rootpath\build"
+    $srcPath = "$rootpath\src"
+    $testPath = "$rootpath\tests"
+    $modulePath = "$buildoutputPath\$moduleName"
+    $dependenciesPath = "$rootpath\dependencies" # folder to store modules
+    $testResult = "Test-Results.xml"
 
-Get-ChildItem env:/appv*
+    $requirementsFilePath = "$buildPath\requirements.psd1" # contains dependencies
+    $buildTasksFilePath = "$buildPath\tasks.build.ps1" # contains tasks to execute
 
-#---------------------------------# 
-# Main                            # 
-#---------------------------------# 
-Install-Module -Name Pester
-Import-Module -Name Pester
+    if($InstallDependencies)
+    {
+        # Setup PowerShell Gallery as PSrepository  & Install PSDepend module
+        if (-not(Get-PackageProvider -Name NuGet -ForceBootstrap)) {
+            $providerBootstrapParams = @{
+                Name = 'nuget'
+                force = $true
+                ForceBootstrap = $true
+            }
 
-write-output "BUILD_FOLDER: $($env:APPVEYOR_BUILD_FOLDER)"
-write-output "PROJECT_NAME: $($env:APPVEYOR_PROJECT_NAME)"
+            if($PSBoundParameters['verbose']) {$providerBootstrapParams.add('verbose',$verbose)}
+            if($GalleryProxy) { $providerBootstrapParams.Add('Proxy',$GalleryProxy) }
+            $null = Install-PackageProvider @providerBootstrapParams
+            Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
+        }
 
-$ModuleClonePath = Join-Path -Path $env:APPVEYOR_BUILD_FOLDER -ChildPath $env:APPVEYOR_PROJECT_NAME
-Write-Output "MODULE CLONE PATH: $($ModuleClonePath)"
+        if (-not(Get-Module -Listavailable -Name PSDepend)) {
+            Write-verbose "BootStrapping PSDepend"
+            "Parameter $buildOutputPath"| Write-verbose
+            $InstallPSDependParams = @{
+                Name = 'PSDepend'
+                AllowClobber = $true
+                Confirm = $false
+                Force = $true
+                Scope = 'CurrentUser'
+            }
+            if($PSBoundParameters['verbose']) { $InstallPSDependParams.add('verbose',$verbose)}
+            if ($GalleryRepository) { $InstallPSDependParams.Add('Repository',$GalleryRepository) }
+            if ($GalleryProxy)      { $InstallPSDependParams.Add('Proxy',$GalleryProxy) }
+            if ($GalleryCredential) { $InstallPSDependParams.Add('ProxyCredential',$GalleryCredential) }
+            Install-Module @InstallPSDependParams
+        }
 
-$moduleName = "$($env:APPVEYOR_PROJECT_NAME)"
-Get-Module $moduleName
+        # Install module dependencies with PSDepend
+        $PSDependParams = @{
+            Force = $true
+            Path = $requirementsFilePath
+        }
+        if($PSBoundParameters['verbose']) { $PSDependParams.add('verbose',$verbose)}
+        Invoke-PSDepend @PSDependParams -Target $dependenciesPath
+        Write-Verbose -Message "Project Bootstrapped"
+    }
 
-#Pester Tests
-write-verbose "invoking pester"
-$Results = Invoke-Pester -Path "$($env:APPVEYOR_BUILD_FOLDER)\Tests" -OutputFormat NUnitXml -OutputFile TestsResults.xml -PassThru
+    # Start build using InvokeBuild module
+    Write-Verbose -Message "Start Build"
+    Invoke-Build -Result 'Result' -File $buildTasksFilePath -Task $tasks
 
-#Uploading Testresults to Appveyor
-(New-Object 'System.Net.WebClient').UploadFile("https://ci.appveyor.com/api/testresults/nunit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path -Path .\TestsResults.xml))
-
-if ($Results.FailedCount -gt 0 -or $Results.PassedCount -eq 0) { 
-    throw "$($Results.FailedCount) tests failed - $($Results.PassedCount) successfully passed"
+    # Return error to CI
+    if ($Result.Error)
+    {
+        $Error[-1].ScriptStackTrace | Out-String
+        exit 1
+    }
+    exit 0
+}catch{
+    throw $_
 }
