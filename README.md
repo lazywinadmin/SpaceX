@@ -1,4 +1,4 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/dq8rbeo5p80s598x?svg=true)](https://ci.appveyor.com/project/lazywinadmin/spacex)
+[![Build Status](https://dev.azure.com/lazywinadmin/SpaceX/_apis/build/status/lazywinadmin.SpaceX?branchName=master)](https://dev.azure.com/lazywinadmin/SpaceX/_build/latest?definitionId=14&branchName=master)
 
 # SpaceX
 
@@ -30,7 +30,6 @@ PowerShell module to interact with [api.spacexdata.com](https://github.com/r-spa
   - [Historical events](#historical-events)
 - [Related posts](#related-posts)
 - [Resources](#resources)
-
 
 ## Contributing
 
