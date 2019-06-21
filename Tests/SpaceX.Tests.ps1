@@ -121,7 +121,7 @@ Describe 'Get-SXApi' {
             $returnedData|Should not BeNullOrEmpty
         }
         It 'gets a single object' {
-            $returnedData.getType() | Should Be 'System.Management.Automation.PSCustomObject'
+            $returnedData.getType().fullname | Should Be 'System.Management.Automation.PSCustomObject'
         }
     }
 }
@@ -130,7 +130,7 @@ Describe 'Get-SXCapsule' {
         $returnedData = Get-SXCapsule
         
         It 'gets an object array' {
-            $returnedData.getType() | Should Be 'System.Object[]'
+            $returnedData.getType().fullname | Should Be 'System.Object[]'
         }
     }
     
@@ -138,7 +138,7 @@ Describe 'Get-SXCapsule' {
         $returnedData = Get-SXCapsule -Capsule C109
         
         It 'gets a single object' {
-            $returnedData.getType() | Should Be 'System.Management.Automation.PSCustomObject'
+            $returnedData.getType().fullname | Should Be 'System.Management.Automation.PSCustomObject'
         }
     }
 }
@@ -148,7 +148,7 @@ Describe 'Get-SXCompany' {
         $returnedData = Get-SXCompany
         
         It 'gets a single object' {
-            $returnedData.getType() | Should Be 'System.Management.Automation.PSCustomObject'
+            $returnedData.getType().fullname | Should Be 'System.Management.Automation.PSCustomObject'
         }
     }
 }
@@ -159,7 +159,7 @@ Describe 'Get-SXCore' {
         $returnedData = Get-SXCore
         
         It 'gets an object array' {
-            $returnedData.getType() | Should Be 'System.Object[]'
+            $returnedData.getType().fullname | Should Be 'System.Object[]'
         }
     }
     
@@ -167,7 +167,7 @@ Describe 'Get-SXCore' {
         $returnedData = Get-SXCore -Serial B1032
         
         It 'gets a single object' {
-            $returnedData.getType() | Should Be 'System.Management.Automation.PSCustomObject'
+            $returnedData.getType().fullname | Should Be 'System.Management.Automation.PSCustomObject'
         }
     }
 }
@@ -178,7 +178,7 @@ Describe 'Get-SXDragon' {
         $returnedData = Get-SXDragon
         
         It 'gets an object array' {
-            $returnedData.getType() | Should Be 'System.Object[]'
+            $returnedData.getType().fullname | Should Be 'System.Object[]'
         }
     }
     
@@ -186,7 +186,7 @@ Describe 'Get-SXDragon' {
         $returnedData = Get-SXDragon -ID dragon1
         
         It 'gets a single object' {
-            $returnedData.getType() | Should Be 'System.Management.Automation.PSCustomObject'
+            $returnedData.getType().fullname | Should Be 'System.Management.Automation.PSCustomObject'
         }
     }
 }
@@ -197,7 +197,7 @@ Describe 'Get-SXHistory' {
         $returnedData = Get-SXHistory
         
         It 'gets an object array' {
-            $returnedData.getType() | Should Be 'System.Object[]'
+            $returnedData.getType().fullname | Should Be 'System.Object[]'
         }
     }
     
@@ -205,7 +205,7 @@ Describe 'Get-SXHistory' {
         $returnedData = Get-SXHistory -ID 1
         
         It 'gets a single object' {
-            $returnedData.getType() | Should Be 'System.Management.Automation.PSCustomObject'
+            $returnedData.getType().fullname | Should Be 'System.Management.Automation.PSCustomObject'
         }
     }
 }
@@ -216,7 +216,7 @@ Describe 'Get-SXLaunch' {
         $returnedData = Get-SXLaunch
         
         It 'gets an object array' {
-            $returnedData.getType() | Should Be 'System.Object[]'
+            $returnedData.getType().fullname | Should Be 'System.Object[]'
         }
     }
     
@@ -224,7 +224,7 @@ Describe 'Get-SXLaunch' {
         $returnedData = Get-SXLaunch -Latest
         
         It 'gets a single object' {
-            $returnedData.getType() | Should Be 'System.Management.Automation.PSCustomObject'
+            $returnedData.getType().fullname | Should Be 'System.Management.Automation.PSCustomObject'
         }
     }
     
@@ -232,7 +232,7 @@ Describe 'Get-SXLaunch' {
         $returnedData = Get-SXLaunch -Upcoming
         
         It 'gets an object array' {
-            $returnedData.getType() | Should Be 'System.Object[]'
+            $returnedData.getType().fullname | Should Be 'System.Object[]'
         }
     }
     
@@ -249,7 +249,7 @@ Describe 'Get-SXLaunchpad' {
         $returnedData = Get-SXLaunchpad
         
         It 'gets an object array' {
-            $returnedData.getType() | Should Be 'System.Object[]'
+            $returnedData.getType().fullname | Should Be 'System.Object[]'
         }
     }
     
@@ -257,7 +257,7 @@ Describe 'Get-SXLaunchpad' {
         $returnedData = Get-SXLaunchpad -Launchpad stls
         
         It 'gets a single object' {
-            $returnedData.getType() | Should Be 'System.Management.Automation.PSCustomObject'
+            $returnedData.getType().fullname | Should Be 'System.Management.Automation.PSCustomObject'
         }
     }
 }
@@ -268,7 +268,7 @@ Describe 'Get-SXMission' {
         $returnedData = Get-SXMission
         
         It 'gets an object array' {
-            $returnedData.getType() | Should Be 'System.Object[]'
+            $returnedData.getType().fullname | Should Be 'System.Object[]'
         }
     }
     
@@ -276,7 +276,7 @@ Describe 'Get-SXMission' {
         $returnedData = Get-SXMission -Mission F3364BF
         
         It 'gets a single object' {
-            $returnedData.getType() | Should Be 'System.Management.Automation.PSCustomObject'
+            $returnedData.getType().fullname | Should Be 'System.Management.Automation.PSCustomObject'
         }
     }
 }
@@ -287,7 +287,7 @@ Describe 'Get-SXPayload' {
         $returnedData = Get-SXPayload
         
         It 'gets an object array' {
-            $returnedData.getType() | Should Be 'System.Object[]'
+            $returnedData.getType().fullname | Should Be 'System.Object[]'
         }
     }
     
@@ -295,7 +295,7 @@ Describe 'Get-SXPayload' {
         $returnedData = Get-SXPayload -PayloadID "CRS-19"
         
         It 'gets a single object' {
-            $returnedData.getType() | Should Be 'System.Management.Automation.PSCustomObject'
+            $returnedData.getType().fullname | Should Be 'System.Management.Automation.PSCustomObject'
         }
     }
 }
@@ -306,7 +306,7 @@ Describe 'Get-SXRoadster' {
         $returnedData = Get-SXRoadster
         
         It 'gets a single object' {
-            $returnedData.getType() | Should Be 'System.Management.Automation.PSCustomObject'
+            $returnedData.getType().fullname | Should Be 'System.Management.Automation.PSCustomObject'
         }
     }
 }
@@ -317,7 +317,7 @@ Describe 'Get-SXRocket' {
         $returnedData = Get-SXRocket
         
         It 'gets an object array' {
-            $returnedData.getType() | Should Be 'System.Object[]'
+            $returnedData.getType().fullname | Should Be 'System.Object[]'
         }
     }
     
@@ -325,7 +325,7 @@ Describe 'Get-SXRocket' {
         $returnedData = Get-SXRocket -Rocket falconheavy
         
         It 'gets a single object' {
-            $returnedData.getType() | Should Be 'System.Management.Automation.PSCustomObject'
+            $returnedData.getType().fullname | Should Be 'System.Management.Automation.PSCustomObject'
         }
     }
 }
@@ -336,7 +336,7 @@ Describe 'Get-SXShip' {
         $returnedData = Get-SXShip
         
         It 'gets an object array' {
-            $returnedData.getType() | Should Be 'System.Object[]'
+            $returnedData.getType().fullname | Should Be 'System.Object[]'
         }
     }
     
@@ -344,7 +344,7 @@ Describe 'Get-SXShip' {
         $returnedData = Get-SXShip -ShipID RACHEL
         
         It 'gets a single object' {
-            $returnedData.getType() | Should Be 'System.Management.Automation.PSCustomObject'
+            $returnedData.getType().fullname | Should Be 'System.Management.Automation.PSCustomObject'
         }
     }
 }
