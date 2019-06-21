@@ -11,7 +11,7 @@ queue:
   name: Hosted VS2017
 steps:
 - powershell: |
-    .\build.ps1 -InstallDependencies:$true -verbose -tasks 'setEnvironment','build','test','deploy'
+    .\build.ps1 -InstallDependencies:$true -verbose -tasks 'setEnvironment','build','test' #,'deploy'
   displayName: 'PowerShell - Build > test > deploy'
   env:
     psgallerykey: $(psgallerykey)

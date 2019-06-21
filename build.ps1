@@ -42,13 +42,16 @@ try{
 
     #$rootpath = Split-Path -path $PSScriptRoot -parent
     $rootpath = $PSScriptRoot
-    $buildOutputPath = "$rootpath\output"
+    $buildOutputPath = "$rootpath\buildoutput"
     $buildPath = "$rootpath\build"
     $srcPath = "$rootpath\src"
     $testPath = "$rootpath\tests"
     $modulePath = "$buildoutputPath\$moduleName"
     $dependenciesPath = "$rootpath\dependencies" # folder to store modules
     $testResult = "Test-Results.xml"
+
+    $env:moduleName = $moduleName
+    $env:modulePath = $modulePath
 
     $requirementsFilePath = "$buildPath\requirements.psd1" # contains dependencies
     $buildTasksFilePath = "$buildPath\tasks.build.ps1" # contains tasks to execute

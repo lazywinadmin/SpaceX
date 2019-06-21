@@ -1,6 +1,6 @@
 Deploy -Name Module {
     By -DeploymentType PSGalleryModule {
-        FromSource -Source (Join-Path -path (Split-Path -Path $PSScriptRoot -Parent) -ChildPath "output\PSModuleSample")
+        FromSource -Source $env:modulePath\$env:moduleName\$env:moduleName.psd1
         To -Targets PSGallery
         WithOptions -Options @{
             ApiKey = $env:PSGalleryKey

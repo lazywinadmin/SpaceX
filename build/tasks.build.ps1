@@ -67,6 +67,9 @@ task -Name clean {
     # Output folder
     Remove-Item -confirm:$false -Recurse -path $buildOutputPath -ErrorAction SilentlyContinue
     #Remove-Item -confirm:$false -Recurse -path $dependenciesPath -ErrorAction SilentlyContinue
+    dir env:bh*|remove-item
+    dir env:modulename|remove-item
+    dir env:modulepath|remove-item
 }
 
 task -Name deploy {
