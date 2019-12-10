@@ -31,7 +31,7 @@ task -Name build {
         Get-Content -Path $($file.fullname) |
             Out-File -FilePath "$modulePath\$moduleName.psm1" -Append -Encoding utf8
     }
-    
+
     # Append existing PSM1 content from source
     if(Test-Path -Path "$srcPath\source.psm1")
     {
@@ -67,9 +67,9 @@ task -Name clean {
     # Output folder
     Remove-Item -confirm:$false -Recurse -path $buildOutputPath -ErrorAction SilentlyContinue
     #Remove-Item -confirm:$false -Recurse -path $dependenciesPath -ErrorAction SilentlyContinue
-    dir env:bh*|remove-item
-    dir env:modulename|remove-item
-    dir env:modulepath|remove-item
+    Get-ChildItem -Path env:bh*|remove-item
+    Get-ChildItem -Path env:modulename|remove-item
+    Get-ChildItem -Path env:modulepath|remove-item
 }
 
 task -Name deploy {
