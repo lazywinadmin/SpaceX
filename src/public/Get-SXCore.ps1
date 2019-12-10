@@ -2,13 +2,13 @@ function Get-SXCore {
   <#
   .SYNOPSIS
   Retrieve SpaceX Core data
-  
+
   .DESCRIPTION
   Retrieve SpaceX Core data
 
   .PARAMETER Serial
   Specify the Core Serial
-  
+
   .EXAMPLE
   C:\PS> Get-SXCore
   Gets data about all the cores
@@ -16,7 +16,7 @@ function Get-SXCore {
   .EXAMPLE
   C:\PS> Get-SXCore -Serial B1032
   Gets data about the core with the specified serial
-  
+
   .NOTES
   https://github.com/lazywinadmin/SpaceX
   #>
