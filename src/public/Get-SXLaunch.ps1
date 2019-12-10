@@ -2,16 +2,16 @@ function Get-SXLaunch {
     <#
     .SYNOPSIS
     Retrieve SpaceX launch data
-    
+
     .DESCRIPTION
     Retrieve SpaceX launch data
-    
+
     .PARAMETER Latest
     Just get data for the latest launch
-    
+
     .PARAMETER Upcoming
     Just get data for upcoming launches
-    
+
     .EXAMPLE
     Get-SXLaunch
     Gets data for all the launches
@@ -23,7 +23,7 @@ function Get-SXLaunch {
     .EXAMPLE
     Get-SXLaunch -Upcoming
     Gets data for upcoming launches
-    
+
     .NOTES
     https://github.com/lazywinadmin/SpaceX
     #>
