@@ -45,7 +45,7 @@ try{
     $buildOutputPath = "$rootpath\buildoutput"
     $buildPath = "$rootpath\build"
     $srcPath = "$rootpath\src"
-    $testPath = "$rootpath\tests"
+    $testPath = Join-Path -Path $rootpath -ChildPath "tests"
     $modulePath = "$buildoutputPath\$moduleName"
     $dependenciesPath = "$rootpath\dependencies" # folder to store modules
     $testResult = "Test-Results.xml"
