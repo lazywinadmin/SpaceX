@@ -105,7 +105,7 @@ Describe "$ModuleName Module - Functions Comment based help" {
                     $Example.remarks | Should not BeNullOrEmpty
                 }
             }
-        }        
+        }
     }
 }
 
@@ -130,15 +130,15 @@ Describe 'Get-SXApi' {
 Describe 'Get-SXCapsule' {
     Context 'no parameters' {
         $returnedData = Get-SXCapsule
-        
+
         It 'gets an object array' {
             $returnedData.getType().fullname | Should Be 'System.Object[]'
         }
     }
-    
+
     Context 'specify Capsule' {
         $returnedData = Get-SXCapsule -Capsule C109
-        
+
         It 'gets a single object' {
             $returnedData.getType().fullname | Should Be 'System.Management.Automation.PSCustomObject'
         }
@@ -148,7 +148,7 @@ Describe 'Get-SXCapsule' {
 Describe 'Get-SXCompany' {
     Context 'no parameters' {
         $returnedData = Get-SXCompany
-        
+
         It 'gets a single object' {
             $returnedData.getType().fullname | Should Be 'System.Management.Automation.PSCustomObject'
         }
@@ -159,15 +159,15 @@ Describe 'Get-SXCompany' {
 Describe 'Get-SXCore' {
     Context 'no parameters' {
         $returnedData = Get-SXCore
-        
+
         It 'gets an object array' {
             $returnedData.getType().fullname | Should Be 'System.Object[]'
         }
     }
-    
+
     Context 'specify Serial' {
         $returnedData = Get-SXCore -Serial B1032
-        
+
         It 'gets a single object' {
             $returnedData.getType().fullname | Should Be 'System.Management.Automation.PSCustomObject'
         }
@@ -178,15 +178,15 @@ Describe 'Get-SXCore' {
 Describe 'Get-SXDragon' {
     Context 'no parameters' {
         $returnedData = Get-SXDragon
-        
+
         It 'gets an object array' {
             $returnedData.getType().fullname | Should Be 'System.Object[]'
         }
     }
-    
+
     Context 'specify ID' {
         $returnedData = Get-SXDragon -ID dragon1
-        
+
         It 'gets a single object' {
             $returnedData.getType().fullname | Should Be 'System.Management.Automation.PSCustomObject'
         }
@@ -197,15 +197,15 @@ Describe 'Get-SXDragon' {
 Describe 'Get-SXHistory' {
     Context 'no parameters' {
         $returnedData = Get-SXHistory
-        
+
         It 'gets an object array' {
             $returnedData.getType().fullname | Should Be 'System.Object[]'
         }
     }
-    
+
     Context 'specify ID' {
         $returnedData = Get-SXHistory -ID 1
-        
+
         It 'gets a single object' {
             $returnedData.getType().fullname | Should Be 'System.Management.Automation.PSCustomObject'
         }
@@ -216,28 +216,28 @@ Describe 'Get-SXHistory' {
 Describe 'Get-SXLaunch' {
     Context 'no parameters' {
         $returnedData = Get-SXLaunch
-        
+
         It 'gets an object array' {
             $returnedData.getType().fullname | Should Be 'System.Object[]'
         }
     }
-    
+
     Context 'specify Latest' {
         $returnedData = Get-SXLaunch -Latest
-        
+
         It 'gets a single object' {
             $returnedData.getType().fullname | Should Be 'System.Management.Automation.PSCustomObject'
         }
     }
-    
+
     Context 'specify Upcoming' {
         $returnedData = Get-SXLaunch -Upcoming
-        
+
         It 'gets an object array' {
             $returnedData.getType().fullname | Should Be 'System.Object[]'
         }
     }
-    
+
     Context 'specify both Latest and Upcoming' {
         It 'is disallowed' {
             {Get-SXLaunch -Latest -Upcoming} | Should -Throw
@@ -249,15 +249,15 @@ Describe 'Get-SXLaunch' {
 Describe 'Get-SXLaunchpad' {
     Context 'no parameters' {
         $returnedData = Get-SXLaunchpad
-        
+
         It 'gets an object array' {
             $returnedData.getType().fullname | Should Be 'System.Object[]'
         }
     }
-    
+
     Context 'specify Launchpad' {
         $returnedData = Get-SXLaunchpad -Launchpad stls
-        
+
         It 'gets a single object' {
             $returnedData.getType().fullname | Should Be 'System.Management.Automation.PSCustomObject'
         }
@@ -268,15 +268,15 @@ Describe 'Get-SXLaunchpad' {
 Describe 'Get-SXMission' {
     Context 'no parameters' {
         $returnedData = Get-SXMission
-        
+
         It 'gets an object array' {
             $returnedData.getType().fullname | Should Be 'System.Object[]'
         }
     }
-    
+
     Context 'specify Mission' {
         $returnedData = Get-SXMission -Mission F3364BF
-        
+
         It 'gets a single object' {
             $returnedData.getType().fullname | Should Be 'System.Management.Automation.PSCustomObject'
         }
@@ -287,15 +287,15 @@ Describe 'Get-SXMission' {
 Describe 'Get-SXPayload' {
     Context 'no parameters' {
         $returnedData = Get-SXPayload
-        
+
         It 'gets an object array' {
             $returnedData.getType().fullname | Should Be 'System.Object[]'
         }
     }
-    
+
     Context 'specify PayloadID' {
         $returnedData = Get-SXPayload -PayloadID "CRS-19"
-        
+
         It 'gets a single object' {
             $returnedData.getType().fullname | Should Be 'System.Management.Automation.PSCustomObject'
         }
@@ -306,7 +306,7 @@ Describe 'Get-SXPayload' {
 Describe 'Get-SXRoadster' {
     Context 'no parameters' {
         $returnedData = Get-SXRoadster
-        
+
         It 'gets a single object' {
             $returnedData.getType().fullname | Should Be 'System.Management.Automation.PSCustomObject'
         }
@@ -317,15 +317,15 @@ Describe 'Get-SXRoadster' {
 Describe 'Get-SXRocket' {
     Context 'no parameters' {
         $returnedData = Get-SXRocket
-        
+
         It 'gets an object array' {
             $returnedData.getType().fullname | Should Be 'System.Object[]'
         }
     }
-    
+
     Context 'specify Rocket' {
         $returnedData = Get-SXRocket -Rocket falconheavy
-        
+
         It 'gets a single object' {
             $returnedData.getType().fullname | Should Be 'System.Management.Automation.PSCustomObject'
         }
@@ -336,15 +336,15 @@ Describe 'Get-SXRocket' {
 Describe 'Get-SXShip' {
     Context 'no parameters' {
         $returnedData = Get-SXShip
-        
+
         It 'gets an object array' {
             $returnedData.getType().fullname | Should Be 'System.Object[]'
         }
     }
-    
+
     Context 'specify ShipID' {
         $returnedData = Get-SXShip -ShipID RACHEL
-        
+
         It 'gets a single object' {
             $returnedData.getType().fullname | Should Be 'System.Management.Automation.PSCustomObject'
         }
