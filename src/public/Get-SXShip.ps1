@@ -2,13 +2,13 @@ function Get-SXShip {
   <#
   .SYNOPSIS
   Retrieve SpaceX ship data
-  
+
   .DESCRIPTION
   Retrieve SpaceX ship data (ASDS drone ships, tugs, fairing recovery ships, and various support ships)
 
   .PARAMETER ShipID
   Specify the ship ID
-  
+
   .EXAMPLE
   C:\PS> Get-SXShip
   Gets data about all ships
@@ -16,7 +16,7 @@ function Get-SXShip {
   .EXAMPLE
   C:\PS> Get-SXShip -ShipID RACHEL
   Gets data aobut the ship with the specified Ship ID
-  
+
   .NOTES
   https://github.com/lazywinadmin/SpaceX
   #>
