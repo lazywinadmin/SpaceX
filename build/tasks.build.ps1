@@ -67,9 +67,9 @@ task -Name clean {
     # Output folder
     Remove-Item -confirm:$false -Recurse -path $buildOutputPath -ErrorAction SilentlyContinue
     #Remove-Item -confirm:$false -Recurse -path $dependenciesPath -ErrorAction SilentlyContinue
-    Get-ChildItem -Path env:bh*|remove-item
-    Get-ChildItem -Path env:modulename|remove-item
-    Get-ChildItem -Path env:modulepath|remove-item
+    Get-ChildItem -Path env:bh* | Remove-Item
+    Get-ChildItem -Path env:moduleName | Remove-Item
+    Get-ChildItem -Path env:modulePath | Remove-Item
 }
 
 task -Name deploy {
@@ -78,6 +78,11 @@ task -Name deploy {
 
 task -Name test {
     # Run test build
-    #Invoke-Pester -Path $TestPath -OutputFormat NUnitXml -OutputFile "$buildOutputPath\$testResult" -PassThru
-    Invoke-Pester -Script @{ Path =  $TestPath; Parameters = @{moduleName = $moduleName; modulePath = $modulePath} } -OutputFormat NUnitXml -OutputFile "$buildOutputPath\$testResult" -PassThru
+    #Invoke-Pester -Path $testPath -OutputFormat NUnitXml -OutputFile "$buildOutputPath\$testResult" -PassThru
+    Invoke-Pester -Script @{
+        Path = $testPath;
+        Parameters = @{
+            moduleName = $moduleName;
+            modulePath = $modulePath}
+        } -OutputFormat NUnitXml -OutputFile "$buildOutputPath\$testResult" -PassThru
 }
